@@ -1,64 +1,61 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Leading medical coding and technology solutions provider.">
-  <meta name="keywords" content="Medical Coding, Healthcare IT, Technology Solutions, Institute Training">
+  <meta name="description" content="Leading medical coding and healthcare IT solutions provider.">
+  <meta name="keywords" content="Medical Coding, Healthcare IT, Technology Solutions, Consulting, Careers">
   <meta name="author" content="Village IT Healthcare">
-  <title>VILLAGE Info Tech Healthcare- Medical Coding Solutions</title>
+  <title>Village IT Healthcare - Medical Coding & IT Solutions</title>
 
   <style>
     body {
       margin: 0;
-      font-family: 'Arial', sans-serif;
-      color: #fff;
-      background-color: #000;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #f4f4f9;
+      color: #333;
       line-height: 1.6;
     }
+
+    /* ===== HEADER ===== */
     header {
-  background-color: #1a1a1a; /* keeps header dark */
-  padding: 20px;
-  text-align: center;
-}
-
-.header-content {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 15px;
-  background: #fff;      /* makes the logo background white */
-  padding: 10px 20px;    /* optional padding for spacing */
-  border-radius: 8px;    /* optional rounded edges */
-}
-
-    .header-content img {
-      max-height: 80px;
-      width: auto;
+      background: linear-gradient(135deg, #0d0d0d, #1c1c1c);
+      padding: 15px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
-    .header-content h1 {
+    header img {
+      height: 70px;
+    }
+    header h1 {
       margin: 0;
-      font-size: 2rem;
-      color: #d89312;
+      font-size: 1.8rem;
+      color: #ff9800;
+      font-weight: 700;
     }
+
+    /* ===== NAV ===== */
     nav {
       display: flex;
-      justify-content: center;
-      background: #333;
-      padding: 10px;
-      flex-wrap: wrap;
+      gap: 25px;
     }
     nav a {
-      color: white;
       text-decoration: none;
-      margin: 10px 15px;
+      color: #fff;
       font-size: 1rem;
+      font-weight: 500;
+      transition: color 0.3s;
     }
     nav a:hover {
-      color: #ffa500;
+      color: #ff9800;
     }
+
+    /* ===== HERO ===== */
     .hero {
       background: url('Home_Image.avif') no-repeat center center/cover;
       height: 500px;
@@ -66,110 +63,79 @@
       justify-content: center;
       align-items: center;
       text-align: center;
+      color: #fff;
       padding: 20px;
     }
     .hero h2 {
-      font-size: 2.5rem;
-      color: #ffa500;
+      font-size: 2.8rem;
+      font-weight: 700;
       margin: 0;
+      color: #ff9800;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
     }
     .hero p {
+      margin-top: 15px;
       font-size: 1.2rem;
-      margin-top: 10px;
-      color: #d9d9d9;
-    }
-    .container {
-      max-width: 1200px;
-      margin: 20px auto;
-      padding: 15px;
-      background: #1a1a1a;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
-    }
-    section {
-      margin-bottom: 30px;
-      padding: 15px;
-      background: #2a2a2a;
-      border-radius: 8px;
-    }
-    h2 {
-      color: #ffa500;
-      font-size: 1.8rem;
-      margin-bottom: 15px;
-    }
-    h3 {
-      color: #e30f0f;
-      font-size: 1.4rem;
-      margin-bottom: 10px;
-    }
-    p, ul li {
-      color: #d9d9d9;
-      font-size: 1rem;
-      line-height: 1.6;
-    }
-    ul {
-      list-style: none;
-      padding: 0;
-    }
-    footer {
-      background: #220a85;
-      text-align: center;
-      padding: 15px;
-      color: #d9d9d9;
-      margin-top: 20px;
     }
 
-    /* ===== Services Grid ===== */
+    /* ===== CONTAINER ===== */
+    .container {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+    section {
+      margin-bottom: 40px;
+    }
+    h2 {
+      color: #ff9800;
+      font-size: 2rem;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+    p, li {
+      font-size: 1rem;
+      color: #444;
+    }
+
+    /* ===== SERVICES ===== */
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 25px;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 30px;
       margin-top: 20px;
     }
     .service-card {
       background: #fff;
-      color: #333;
       padding: 25px;
       border-radius: 12px;
       text-align: center;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      transition: 0.3s;
     }
     .service-card:hover {
       transform: translateY(-8px);
-      box-shadow: 0 8px 18px rgba(0,0,0,0.25);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
     }
     .service-card img {
-    width: 120px;      /* you can try 120px, 150px, etc. */
-    height: auto;      /* keeps proportion */
-    margin-bottom: 25px;
-}
-
+      width: 90px;
+      margin-bottom: 20px;
     }
     .service-card h3 {
+      margin-bottom: 12px;
       color: #0066cc;
     }
 
-    /* ===== Contact Form Styling ===== */
+    /* ===== CONTACT FORM ===== */
     .form-section {
-      background: #f9f9f9;
-      color: #000;
-      padding: 40px 20px;
-      border-radius: 10px;
-      margin-top: 30px;
+      background: #fafafa;
+      padding: 50px 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     }
     .form-container {
-      max-width: 900px;
-      margin: 0 auto;
-      background: #fff;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    }
-    .form-container h2 {
-      text-align: center;
-      color: #333;
-      margin-bottom: 20px;
+      max-width: 800px;
+      margin: auto;
     }
     form {
       display: grid;
@@ -185,200 +151,144 @@
       padding: 10px;
       border: 1px solid #ccc;
       border-radius: 6px;
-      font-size: 14px;
     }
     textarea {
       grid-column: span 2;
-      min-height: 100px;
-    }
-    .checkbox {
-      grid-column: span 2;
+      min-height: 120px;
     }
     .btn {
       grid-column: span 2;
       text-align: center;
     }
     button {
-      background: #ff6600;
+      background: #ff9800;
       color: #fff;
       border: none;
-      padding: 12px 25px;
+      padding: 12px 28px;
       font-size: 16px;
       border-radius: 30px;
       cursor: pointer;
       transition: 0.3s;
     }
     button:hover {
-      background: #e65c00;
+      background: #e68900;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: #0d0d0d;
+      color: #ccc;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+    footer a {
+      color: #ff9800;
+      text-decoration: none;
+    }
+    footer a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
+
+  <!-- HEADER -->
   <header>
-    <div class="header-content">
-      <img src="Original_Color_Logo.png" alt="Village Info Tech Logo">
-      <h1>VILLAGE IT HEALTH CARE</h1>
+    <div style="display:flex; align-items:center; gap:15px;">
+      <img src="Original_Color_Logo.png" alt="Village IT Logo">
+      <h1>Village IT Healthcare</h1>
     </div>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#mission">Mission</a>
+      <a href="#career">Careers</a>
+      <a href="#contact">Contact</a>
+    </nav>
   </header>
 
-  <nav>
-    <a href="#about">About Us</a>
-    <a href="#services">Services</a>
-    <a href="#institute-brief">Institute</a>
-    <a href="#mission">Mission</a>
-    <a href="#contact">Contact</a>
-    <a href="#contact">Career</a>
-  </nav>
-
+  <!-- HERO -->
   <div class="hero">
     <div>
-      <h2>Streamline your billing process with our medical coding services.</h2>
-      <p>Delivering innovative medical coding and IT solutions worldwide.</p>
+      <h2>Empowering Healthcare with Coding & IT Solutions</h2>
+      <p>Trusted partner for Medical Coding, Compliance, and Technology worldwide.</p>
     </div>
   </div>
 
   <div class="container">
-    <!-- About -->
-  <section id="about">
-  <h2>About Us</h2>
-  <p>
-    <strong>Village IT Healthcare</strong>, founded in <strong>2023</strong>, is a
-    professional organization dedicated to delivering high-quality
-    <strong>Medical Coding</strong>, <strong>Healthcare IT</strong>, and
-    <strong>Technology Solutions</strong>.  
-  </p>
-  <p>
-    Since our inception, our mission has been to simplify healthcare
-    documentation and billing by providing precise, efficient, and compliant
-    coding solutions. We partner with hospitals, clinics, and independent
-    physicians to ensure accuracy, compliance, and smooth revenue cycles.
-  </p>
-  <p>
-    With a team of certified medical coders and technology experts, Village
-    IT Healthcare stands out for:
-  </p>
-  <ul>
-    <li>✔ Accuracy and compliance in every medical code</li>
-    <li>✔ Faster claim approvals and reduced rejections</li>
-    <li>✔ Customized coding and IT solutions</li>
-    <li>✔ Global service reach with cost-effective models</li>
-  </ul>
-  <p>
-    We believe in empowering healthcare providers to focus on what truly
-    matters: delivering quality patient care while we take care of coding,
-    billing, and compliance.
-  </p>
-</section>
+    <!-- ABOUT -->
+    <section id="about">
+      <h2>About Us</h2>
+      <p>
+        <strong>Village IT Healthcare</strong>, founded in <strong>2023</strong>, is a global 
+        provider of <b>Medical Coding</b>, <b>Healthcare IT</b>, and <b>Technology Solutions</b>.  
+        We streamline billing processes, ensure compliance, and empower healthcare 
+        providers with modern IT solutions.
+      </p>
+    </section>
 
-     <!-- Services -->
+    <!-- SERVICES -->
     <section id="services">
-      <h2>What We Offer</h2>
+      <h2>Our Services</h2>
       <div class="services-grid">
         <div class="service-card">
           <img src="https://img.icons8.com/ios-filled/70/4a90e2/medical-doctor.png" alt="Medical Coding">
-          <h3><b>Medical Coding Services</b></h3>
-          <p>End-to-end ICD-10, CPT, and HCPCS coding services ensuring accuracy, compliance, and faster reimbursements.</p>
+          <h3>Medical Coding</h3>
+          <p>ICD-10, CPT, and HCPCS coding with compliance and faster reimbursements.</p>
         </div>
         <div class="service-card">
           <img src="Professinal training.png" alt="Training">
-          <h3><b>Professional Training</b></h3>
-          <p>Industry-focused training programs for students and professionals in Medical Coding, Healthcare IT, and Compliance.</p>
+          <h3>Training</h3>
+          <p>Industry-ready training programs for professionals and students in coding & IT.</p>
         </div>
         <div class="service-card">
           <img src="https://img.icons8.com/ios-filled/70/4a90e2/data-configuration.png" alt="IT Solutions">
-          <h3><b>Healthcare IT Solutions</b></h3>
-          <p>Customized IT tools, software integration, and automation solutions to streamline hospital and clinic operations.</p>
+          <h3>Healthcare IT</h3>
+          <p>Software integration, automation, and customized IT solutions for healthcare.</p>
         </div>
         <div class="service-card">
           <img src="https://img.icons8.com/ios-filled/70/4a90e2/business.png" alt="Consulting">
-          <h3><b>Consulting & Compliance</b></h3>
-          <p>Expert consulting in HIPAA compliance, audit support, and best practices to safeguard your organization.</p>
-        </div>
-        <div class="service-card">
-          <img src="https://img.icons8.com/ios-filled/70/4a90e2/network.png" alt="Global Service">
-          <h3><b>Global Service Support</b></h3>
-          <p>Trusted by clients worldwide with scalable, cost-effective solutions tailored to healthcare organizations.</p>
+          <h3>Consulting</h3>
+          <p>HIPAA compliance, audits, and advisory support for healthcare providers.</p>
         </div>
       </div>
     </section>
-  </div>
 
-    <!-- Institute -->
-   <!-- Institute Brief Section -->
-<section id="institute-brief" style="padding:60px 20px; background:linear-gradient(135deg,#f8f9fa,#eef1f6);">
-  <div style="max-width:1100px; margin:auto; text-align:center;">
-    <h2 style="font-size:2.2rem; font-weight:700; margin-bottom:20px; color:#222;">About Our Institute</h2>
-    <p style="font-size:1.1rem; line-height:1.8; color:#555; max-width:850px; margin:auto;">
-      Founded in <b>2023</b>, our institute is dedicated to excellence in <b>Medical Coding, Healthcare IT, and Professional Training</b>. 
-      We empower students and organizations with industry-ready skills, globally recognized training, and hands-on learning programs that
-      shape the future of healthcare technology.
-    </p>
-
-    <!-- Cards Section -->
-    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(250px,1fr)); gap:25px; margin-top:40px;">
-      
-      <!-- Card 1 -->
-      <div style="background:#fff; padding:30px; border-radius:15px; box-shadow:0 4px 12px rgba(0,0,0,0.08);">
-       <img src="Professinal training.png" 
-     alt="Training" 
-     style="width:160px; height:auto; margin-bottom:15px;">
-        <h3 style="font-size:1.3rem; font-weight:600; margin-bottom:10px;">Professional Training</h3>
-        <p style="color:#555;">Comprehensive courses in Medical Coding, ICD-10, CPT, and Healthcare IT designed to prepare you for global careers.</p>
-      </div>
-
-      <!-- Card 2 -->
-      <div style="background:#fff; padding:30px; border-radius:15px; box-shadow:0 4px 12px rgba(0,0,0,0.08);">
-        <img src="https://img.icons8.com/ios-filled/70/4a90e2/hospital-room.png" alt="Healthcare" style="margin-bottom:15px;">
-        <h3 style="font-size:1.3rem; font-weight:600; margin-bottom:10px;">Healthcare Solutions</h3>
-        <p style="color:#555;">Partnering with healthcare organizations to provide IT solutions, compliance support, and consulting services.</p>
-      </div>
-
-      <!-- Card 3 -->
-      <div style="background:#fff; padding:30px; border-radius:15px; box-shadow:0 4px 12px rgba(0,0,0,0.08);">
-        <img src="https://img.icons8.com/ios-filled/70/4a90e2/goal.png" alt="Mission" style="margin-bottom:15px;">
-        <h3 style="font-size:1.3rem; font-weight:600; margin-bottom:10px;">Our Mission</h3>
-        <p style="color:#555;">To bridge the gap between education and healthcare technology through world-class training and innovation.</p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-
-    <!-- Mission -->
+    <!-- MISSION -->
     <section id="mission">
       <h2>Our Mission</h2>
-      <p>Our mission is to provide exceptional medical coding services and IT solutions that empower healthcare organizations...</p>
+      <p>To transform healthcare documentation through precision, compliance, and innovation — enabling organizations to focus on patient care.</p>
     </section>
 
-    <!-- Contact -->
+    <!-- CAREERS -->
+    <section id="career">
+      <h2>Careers</h2>
+      <p>
+        Join <b>Village IT Healthcare</b> and grow with us in the fields of <b>Medical Coding</b>, 
+        <b>Healthcare IT</b>, and <b>Technology Solutions</b>.
+      </p>
+      <ul>
+        <li>Medical Coding Specialists</li>
+        <li>Healthcare IT Analysts</li>
+        <li>Software Developers</li>
+        <li>Training Faculty</li>
+      </ul>
+      <p>Send your resume to <a href="mailto:villageinfotechclient@gmail.com">villageinfotechclient@gmail.com</a></p>
+    </section>
+
+    <!-- CONTACT -->
     <section id="contact" class="form-section">
       <div class="form-container">
-        <h2>Contact Village IT Healthcare</h2>
+        <h2>Contact Us</h2>
         <form action="mailto:villageinfotechclient@gmail.com" method="post" enctype="text/plain">
-          <div><label>Your Name*</label><input type="text" name="name" required></div>
-          <div><label>Your Email*</label><input type="email" name="email" required></div>
-          <div><label>Phone Number</label><input type="text" name="phone"></div>
-          <div><label>Mobile Number</label><input type="text" name="mobile"></div>
-          <div><label>Company / Organization*</label><input type="text" name="company" required></div>
-          <div><label>Speciality</label><input type="text" name="speciality"></div>
-          <div><label>Job Title</label><input type="text" name="jobtitle"></div>
-          <div><label>Select your country</label>
-            <select name="country">
-              <option value="">-- Select Country --</option>
-              <option>India</option>
-              <option>USA</option>
-              <option>UK</option>
-              <option>Canada</option>
-              <option>Australia</option>
-            </select>
-          </div>
+          <div><label>Name*</label><input type="text" name="name" required></div>
+          <div><label>Email*</label><input type="email" name="email" required></div>
+          <div><label>Phone</label><input type="text" name="phone"></div>
+          <div><label>Company</label><input type="text" name="company"></div>
           <div class="textarea">
-            <label>Your Question</label>
-            <textarea name="question"></textarea>
-          </div>
-          <div class="checkbox">
-            <input type="checkbox" required> By completing this form, you agree to receive future updates *
+            <label>Message</label>
+            <textarea name="message"></textarea>
           </div>
           <div class="btn">
             <button type="submit">Submit</button>
@@ -387,54 +297,10 @@
       </div>
     </section>
   </div>
-<section id="career">
-  <h2>Careers</h2>
-  <p>
-    At <strong>Village IT Healthacare</strong>, we believe in empowering talent and providing 
-    opportunities to grow in the fields of <strong>Medical Coding</strong>, 
-    <strong>Healthcare IT</strong>, and <strong>Technology Solutions</strong>.
-  </p>
-  <p>
-    We are always looking for passionate professionals who are eager to 
-    contribute their expertise and grow with us. Join our team and be part of 
-    an innovative organization that is shaping the future of healthcare 
-    documentation and technology.
-  </p>
-  <p>
-    <strong>Current Openings:</strong>
-    <ul>
-      <li>Medical Coding Specialists</li>
-      <li>Healthcare IT Analysts</li>
-      <li>Software Developers</li>
-      <li>Training Faculty (Medical Coding & IT)</li>
-    </ul>
-  </p>
-  <p>
-    To apply, send your resume to 
-    <a href="villageinfotechclient@gmail.com">villageinfotechclient@gmail.com</a>
-  </p>
-</section>
+
+  <!-- FOOTER -->
   <footer>
-    <p>&copy; 2025 Village IT Healthcare. All Rights Reserved.</p>
+    <p>&copy; 2025 Village IT Healthcare. All Rights Reserved. | <a href="#top">Back to Top</a></p>
   </footer>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
