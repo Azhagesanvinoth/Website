@@ -131,6 +131,12 @@
             line-height: 1;
         }
         
+        .logo img {
+            max-height: 60px; /* Adjusted logo size */
+            width: auto;
+            object-fit: contain;
+        }
+        
         .logo-main {
             font-size: 2.2rem;
             font-weight: 800;
@@ -520,6 +526,12 @@
             margin-bottom: 20px;
         }
         
+        .footer-logo img {
+            max-height: 70px; /* Slightly larger for footer */
+            width: auto;
+            margin-bottom: 10px;
+        }
+        
         /* Responsive Design */
         @media (max-width: 992px) {
             .about-content {
@@ -575,6 +587,10 @@
                 bottom: 10px;
                 right: 10px;
             }
+            
+            .logo img {
+                max-height: 50px; /* Slightly smaller on mobile */
+            }
         }
         
         @media (max-width: 576px) {
@@ -606,6 +622,10 @@
             .video-controls {
                 display: none; /* Hide controls on very small screens */
             }
+            
+            .logo img {
+                max-height: 40px; /* Even smaller on very small screens */
+            }
         }
     </style>
 </head>
@@ -616,7 +636,7 @@
             <nav>
                 <div class="logo-container">
                     <div class="logo">
-                        <img src="Original Color Logo.png">
+                        <img src="Original Color Logo.png" alt="Village INFO Tech Logo">
                     </div>
                 </div>
                 <ul class="nav-links">
@@ -624,7 +644,7 @@
                     <li><a href="#about">About Us</a></li>
                     <li><a href="#services">Services</a></li>
                     <li><a href="#projects">Projects</a></li>
-                    <li><a href#team">Team</a></li>
+                    <li><a href="#team">Team</a></li>
                     <li><a href="#why">Why Choose Us</a></li>
                     <li><a href="#careers">Careers</a></li>
                     <li><a href="#contact">Contact</a></li>
@@ -939,11 +959,7 @@
     <footer>
         <div class="container">
             <div class="footer-logo">
-                <div class="logo">
-                    <div class="logo-main">VILLAGE</div>
-                    <div class="logo-sub">INFO TECH</div>
-                    <div class="logo-tagline">Learning Today..Leading Tomorrow</div>
-                </div>
+                <img src="Original Color Logo.png" alt="Village INFO Tech Logo">
             </div>
             <p>&copy; 2023 Village INFO Tech. All rights reserved.</p>
         </div>
