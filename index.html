@@ -115,7 +115,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 0;
+            padding: 15px 0;
         }
         
         .logo-container {
@@ -132,7 +132,7 @@
         }
         
         .logo img {
-            max-height: 60px; /* Adjusted logo size */
+            height: 70px; /* Increased logo size */
             width: auto;
             object-fit: contain;
         }
@@ -527,7 +527,7 @@
         }
         
         .footer-logo img {
-            max-height: 70px; /* Slightly larger for footer */
+            height: 80px; /* Slightly larger for footer */
             width: auto;
             margin-bottom: 10px;
         }
@@ -589,7 +589,7 @@
             }
             
             .logo img {
-                max-height: 50px; /* Slightly smaller on mobile */
+                height: 60px; /* Slightly smaller on mobile */
             }
         }
         
@@ -624,7 +624,7 @@
             }
             
             .logo img {
-                max-height: 40px; /* Even smaller on very small screens */
+                height: 50px; /* Even smaller on very small screens */
             }
         }
     </style>
@@ -659,9 +659,10 @@
     <!-- Hero Section with Video Background -->
     <section id="home" class="hero">
         <div class="video-background">
-            <!-- Replace with your actual video file -->
-            <video autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80">
+            <!-- Video with multiple sources for better browser compatibility -->
+            <video autoplay muted loop playsinline id="bgVideo" poster="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80">
                 <source src="Untitled design (1).mp4" type="video/mp4">
+                <!-- Fallback image if video doesn't load -->
                 Your browser does not support the video tag.
             </video>
             <div class="video-overlay"></div>
@@ -814,7 +815,7 @@
             </div>
             
             <p style="text-align: center; margin-top: 30px;">
-                Led by experienced managers Vinoth A and Balamurugan, our 13 skilled coders ensure every project meets the highest quality standards.
+                Led by experienced managers Vinoth A and Balamurugan, our 25 skilled coders ensure every project meets the highest quality standards.
             </p>
         </div>
     </section>
@@ -988,10 +989,25 @@
             this.reset();
         });
         
-        // Video Controls
-        const video = document.querySelector('.video-background video');
+        // Video Controls with improved reliability
+        const video = document.getElementById('bgVideo');
         const playPauseBtn = document.getElementById('playPauseBtn');
         const muteUnmuteBtn = document.getElementById('muteUnmuteBtn');
+        
+        // Function to ensure video plays
+        function ensureVideoPlays() {
+            if (video.paused) {
+                const playPromise = video.play();
+                
+                if (playPromise !== undefined) {
+                    playPromise.catch(error => {
+                        // Auto-play was prevented, show controls
+                        console.log("Auto-play prevented:", error);
+                        document.querySelector('.video-controls').style.display = 'flex';
+                    });
+                }
+            }
+        }
         
         // Play/Pause functionality
         playPauseBtn.addEventListener('click', () => {
@@ -1015,10 +1031,38 @@
             }
         });
         
-        // Ensure video plays correctly on mobile devices
-        document.addEventListener('DOMContentLoaded', function() {
-            video.play();
+        // Monitor video for errors and attempt to restart if it stops
+        video.addEventListener('pause', function() {
+            // If the video pauses unexpectedly (not by user), try to restart it
+            if (!video.ended && !video.seeking) {
+                setTimeout(() => {
+                    if (video.paused) {
+                        video.play().catch(e => console.log("Video play failed:", e));
+                    }
+                }, 1000);
+            }
         });
+        
+        // Attempt to play video when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            ensureVideoPlays();
+            
+            // Additional check after a short delay
+            setTimeout(ensureVideoPlays, 1000);
+        });
+        
+        // Attempt to replay if video ends
+        video.addEventListener('ended', function() {
+            video.currentTime = 0;
+            video.play().catch(e => console.log("Video replay failed:", e));
+        });
+        
+        // Periodically check if video is playing and restart if not
+        setInterval(() => {
+            if (video.paused && !video.ended && document.visibilityState === 'visible') {
+                video.play().catch(e => console.log("Background video check failed:", e));
+            }
+        }, 5000);
     </script>
 </body>
 </html>
