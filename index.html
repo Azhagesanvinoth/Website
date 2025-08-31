@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Village Info Tech Health Care- Medical Coding Partner</title>
+    <title>Village Info Tech Health Care - Medical Coding Partner</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* Global Styles */
@@ -101,6 +101,13 @@
             background: var(--accent);
         }
         
+        .section-title p {
+            color: #666;
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
         /* Header & Navigation */
         header {
             position: fixed;
@@ -132,7 +139,7 @@
         }
         
         .logo img {
-            height: 70px; /* Increased logo size */
+            height: 70px;
             width: auto;
             object-fit: contain;
         }
@@ -168,6 +175,7 @@
         
         .nav-links li {
             margin-left: 30px;
+            position: relative;
         }
         
         .nav-links a {
@@ -175,6 +183,22 @@
             color: var(--dark);
             font-weight: 500;
             transition: color 0.3s ease;
+            position: relative;
+        }
+        
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--primary);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-links a:hover:after {
+            width: 100%;
         }
         
         .nav-links a:hover {
@@ -235,6 +259,7 @@
             position: relative;
             z-index: 1;
             width: 100%;
+            padding: 0 20px;
         }
         
         .hero-content h1 {
@@ -298,6 +323,12 @@
             flex: 1;
         }
         
+        .about-text p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
         .about-stats {
             display: flex;
             gap: 30px;
@@ -306,6 +337,10 @@
         
         .stat-item {
             text-align: center;
+            padding: 20px;
+            background: var(--light);
+            border-radius: 10px;
+            flex: 1;
         }
         
         .stat-number {
@@ -326,7 +361,7 @@
         
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 30px;
         }
         
@@ -335,18 +370,43 @@
             padding: 30px;
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
             text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
         
         .service-card:hover {
             transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
         }
         
         .service-icon {
-            font-size: 3rem;
-            color: var(--primary);
+            width: 100px;
+            height: 100px;
             margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(44, 90, 160, 0.1);
+        }
+        
+        .service-icon img {
+            max-width: 60px;
+            max-height: 60px;
+            object-fit: contain;
+        }
+        
+        .service-card h3 {
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+        
+        .service-card p {
+            color: #666;
+            line-height: 1.6;
         }
         
         /* Projects Section */
@@ -362,6 +422,11 @@
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
             border-left: 4px solid var(--primary);
+            transition: transform 0.3s ease;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
         }
         
         .project-card h3 {
@@ -391,6 +456,11 @@
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
             text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .team-member:hover {
+            transform: translateY(-5px);
         }
         
         .team-member img {
@@ -399,12 +469,13 @@
             border-radius: 50%;
             object-fit: cover;
             margin-bottom: 20px;
+            border: 4px solid var(--light);
         }
         
         .strengths {
             display: flex;
             justify-content: center;
-            gap: 20px;
+            gap: 15px;
             margin-top: 30px;
             flex-wrap: wrap;
         }
@@ -426,13 +497,29 @@
         
         .benefit-card {
             text-align: center;
-            padding: 30px;
+            padding: 30px 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-5px);
         }
         
         .benefit-icon {
             font-size: 2.5rem;
             color: var(--primary);
             margin-bottom: 20px;
+            background: rgba(44, 90, 160, 0.1);
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin: 0 auto 20px;
         }
         
         /* Careers Section */
@@ -449,7 +536,7 @@
         .positions {
             display: flex;
             justify-content: center;
-            gap: 20px;
+            gap: 15px;
             margin: 30px 0;
             flex-wrap: wrap;
         }
@@ -459,6 +546,7 @@
             color: white;
             padding: 10px 20px;
             border-radius: 5px;
+            font-size: 0.9rem;
         }
         
         /* Contact Section */
@@ -471,30 +559,41 @@
         .contact-info {
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 25px;
         }
         
         .contact-item {
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             gap: 15px;
         }
         
         .contact-icon {
             font-size: 1.5rem;
             color: var(--primary);
+            min-width: 30px;
+        }
+        
+        .contact-details h4 {
+            margin-bottom: 5px;
+        }
+        
+        .contact-details p {
+            color: #666;
         }
         
         .contact-form {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
         }
         
         .form-group {
             display: flex;
             flex-direction: column;
             gap: 8px;
+            margin-bottom: 20px;
         }
         
         .form-group label {
@@ -507,6 +606,13 @@
             border: 1px solid #ddd;
             border-radius: 5px;
             font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: var(--primary);
+            outline: none;
         }
         
         .form-group textarea {
@@ -518,18 +624,65 @@
         footer {
             background: var(--dark);
             color: white;
-            padding: 40px 0;
-            text-align: center;
+            padding: 60px 0 30px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
         }
         
         .footer-logo {
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
         
-        .footer-logo img {
-            height: 80px; /* Slightly larger for footer */
-            width: auto;
+        .footer-about p {
+            margin-bottom: 20px;
+            opacity: 0.8;
+            line-height: 1.6;
+        }
+        
+        .footer-links h3,
+        .footer-contact h3 {
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links li {
             margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            opacity: 1;
+        }
+        
+        .footer-contact p {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            opacity: 0.8;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            opacity: 0.7;
+            font-size: 0.9rem;
         }
         
         /* Responsive Design */
@@ -544,6 +697,11 @@
             
             .hero-content p {
                 font-size: 1.2rem;
+            }
+            
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
             }
         }
         
@@ -589,7 +747,20 @@
             }
             
             .logo img {
-                height: 60px; /* Slightly smaller on mobile */
+                height: 60px;
+            }
+            
+            .about-stats {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .stat-item {
+                width: 100%;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
             }
         }
         
@@ -606,11 +777,6 @@
                 font-size: 1rem;
             }
             
-            .about-stats {
-                flex-direction: column;
-                gap: 20px;
-            }
-            
             .logo-main {
                 font-size: 1.8rem;
             }
@@ -620,11 +786,11 @@
             }
             
             .video-controls {
-                display: none; /* Hide controls on very small screens */
+                display: none;
             }
             
             .logo img {
-                height: 50px; /* Even smaller on very small screens */
+                height: 50px;
             }
         }
     </style>
@@ -659,10 +825,8 @@
     <!-- Hero Section with Video Background -->
     <section id="home" class="hero">
         <div class="video-background">
-            <!-- Video with multiple sources for better browser compatibility -->
             <video autoplay muted loop playsinline id="bgVideo" poster="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80">
                 <source src="Untitled design (1).mp4" type="video/mp4">
-                <!-- Fallback image if video doesn't load -->
                 Your browser does not support the video tag.
             </video>
             <div class="video-overlay"></div>
@@ -697,7 +861,7 @@
             </div>
             <div class="about-content">
                 <div class="about-text">
-                    <p> WELCOME To VILLAGE INFO TECH HEALTH CARE</p>
+                    <p>WELCOME To VILLAGE INFO TECH HEALTH CARE</p>
                     <p>Village Info Tech (VIT) Health Care is a leading medical coding company based in Tamil Nadu, India, specializing in HCC, Risk Adjustment, and Outpatient (OP) coding. Since 2023, we have partnered with healthcare organizations to deliver accurate, HIPAA-compliant, and efficient coding solutions.</p>
                     <p>Our mission is to empower healthcare teams by ensuring precise documentation, reducing denials, and improving risk scores. With a focus on quality, compliance, and client success, VIT HC combines expert coders, multi-layered quality audits, and secure data practices to help our clients focus on patient care while we handle the coding workflow.</p>
                     <p>With a dedicated team of 50 coders, we have successfully completed 7 projects for 5 major healthcare companies and are expanding rapidly with new client partnerships.</p>
@@ -705,7 +869,7 @@
                     <div class="about-stats">
                         <div class="stat-item">
                             <div class="stat-number">50+</div>
-                            <div class="stat-label">AAPC&AHIMA Certified Coders</div>
+                            <div class="stat-label">AAPC & AHIMA Certified Coders</div>
                         </div>
                         <div class="stat-item">
                             <div class="stat-number">7</div>
@@ -731,32 +895,34 @@
             <div class="services-grid">
                 <div class="service-card">
                     <div class="service-icon">
-                         <img src="HCC Coding.png" 
+                        <img src="https://placehold.co/100x100/2c5aa0/FFFFFF?text=HCC" alt="HCC Coding">
+                    </div>
                     <h3>HCC Coding</h3>
-                    <p>Risk Adjustment accuracy to boost compliance and reimbursements.</p>
+                    <p>Risk Adjustment accuracy to boost compliance and reimbursements with precision coding for hierarchical condition categories.</p>
                 </div>
                 
                 <div class="service-card">
                     <div class="service-icon">
-                         <img src="OP Coding.png"
+                        <img src="https://placehold.co/100x100/3a7bd5/FFFFFF?text=OP" alt="OP Coding">
+                    </div>
                     <h3>OP Coding</h3>
-                    <p>Streamlined outpatient coding services (Starting Feb 2025).</p>
+                    <p>Streamlined outpatient coding services with meticulous attention to detail (Starting Feb 2025).</p>
                 </div>
                 
                 <div class="service-card">
                     <div class="service-icon">
-                        <i class="fas fa-search"></i>
+                        <i class="fas fa-search" style="font-size: 2.5rem; color: var(--primary);"></i>
                     </div>
                     <h3>Quality Auditing</h3>
-                    <p>100% accuracy audits for error-free submissions.</p>
+                    <p>100% accuracy audits for error-free submissions and compliance assurance with multi-level review processes.</p>
                 </div>
                 
                 <div class="service-card">
                     <div class="service-icon">
-                        <i class="fas fa-hands-helping"></i>
+                        <i class="fas fa-hands-helping" style="font-size: 2.5rem; color: var(--primary);"></i>
                     </div>
                     <h3>Client Support & Training</h3>
-                    <p>Custom training for coders and seamless client integration.</p>
+                    <p>Custom training for coders and seamless client integration with ongoing support and consultation services.</p>
                 </div>
             </div>
         </div>
@@ -767,21 +933,22 @@
         <div class="container">
             <div class="section-title">
                 <h2>Projects & Achievements</h2>
+                <p>Our successful collaborations and milestones in medical coding</p>
             </div>
             <div class="projects-grid">
                 <div class="project-card">
                     <h3><i class="fas fa-check-circle check-icon"></i> Anthem Project</h3>
-                    <p>Completed 2,719 Anthem charts with top accuracy.</p>
+                    <p>Completed 2,719 Anthem charts with exceptional accuracy and timely delivery, exceeding client expectations.</p>
                 </div>
                 
                 <div class="project-card">
                     <h3><i class="fas fa-check-circle check-icon"></i> Centene & Centauri</h3>
-                    <p>Successfully handled Centene and Centauri projects with excellent client feedback.</p>
+                    <p>Successfully handled Centene and Centauri projects with excellent client feedback and results that improved risk scores.</p>
                 </div>
                 
                 <div class="project-card">
                     <h3><i class="fas fa-check-circle check-icon"></i> Expansion 2025</h3>
-                    <p>Scaling to handle new U.S.-based HCC projects for 2025.</p>
+                    <p>Scaling to handle new U.S.-based HCC projects for 2025 with expanded team capacity and advanced technology.</p>
                 </div>
             </div>
         </div>
@@ -792,6 +959,7 @@
         <div class="container">
             <div class="section-title">
                 <h2>Meet Our Experts</h2>
+                <p>Our dedicated team of medical coding professionals</p>
             </div>
             <div class="team-grid">
                 <div class="team-member">
@@ -811,10 +979,12 @@
                 <span class="strength-tag">Accuracy</span>
                 <span class="strength-tag">Productivity</span>
                 <span class="strength-tag">Confidentiality</span>
+                <span class="strength-tag">Expertise</span>
+                <span class="strength-tag">Reliability</span>
             </div>
             
             <p style="text-align: center; margin-top: 30px;">
-                Led by experienced managers Vinoth A and Balamurugan, our 25 skilled coders ensure every project meets the highest quality standards.
+                Led by experienced managers Vinoth A and Balamurugan, our 50 skilled coders ensure every project meets the highest quality standards and compliance requirements.
             </p>
         </div>
     </section>
@@ -824,6 +994,7 @@
         <div class="container">
             <div class="section-title">
                 <h2>Why Choose VIT</h2>
+                <p>Reasons to partner with us for your medical coding needs</p>
             </div>
             <div class="benefits-grid">
                 <div class="benefit-card">
@@ -831,7 +1002,7 @@
                         <i class="fas fa-shield-alt"></i>
                     </div>
                     <h3>HIPAA & CMS Compliant</h3>
-                    <p>Our processes adhere to all regulatory requirements.</p>
+                    <p>Our processes adhere to all regulatory requirements and security standards for complete compliance.</p>
                 </div>
                 
                 <div class="benefit-card">
@@ -839,7 +1010,7 @@
                         <i class="fas fa-users"></i>
                     </div>
                     <h3>Highly Skilled Coders</h3>
-                    <p>Our team has proven experience in medical coding.</p>
+                    <p>Our team has proven experience and certifications in medical coding with continuous training.</p>
                 </div>
                 
                 <div class="benefit-card">
@@ -847,7 +1018,7 @@
                         <i class="fas fa-indian-rupee-sign"></i>
                     </div>
                     <h3>Affordable & Scalable</h3>
-                    <p>Cost-effective solutions that grow with your needs.</p>
+                    <p>Cost-effective solutions that grow with your needs and budget without compromising quality.</p>
                 </div>
                 
                 <div class="benefit-card">
@@ -855,7 +1026,7 @@
                         <i class="fas fa-clock"></i>
                     </div>
                     <h3>Quick Turnaround</h3>
-                    <p>Efficient processes ensure timely delivery.</p>
+                    <p>Efficient processes ensure timely delivery without compromising on accuracy or quality.</p>
                 </div>
                 
                 <div class="benefit-card">
@@ -863,7 +1034,15 @@
                         <i class="fas fa-check-double"></i>
                     </div>
                     <h3>Dedicated QA Team</h3>
-                    <p>Specialized team for quality assurance and auditing.</p>
+                    <p>Specialized team for quality assurance and auditing to ensure 100% accuracy in coding.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>24/7 Support</h3>
+                    <p>Round-the-clock customer support for all your needs and queries with quick response times.</p>
                 </div>
             </div>
         </div>
@@ -874,14 +1053,16 @@
         <div class="container">
             <div class="section-title">
                 <h2>Join the VIT Family</h2>
+                <p>Grow your career with our expanding team</p>
             </div>
             <div class="careers-content">
-                <p>Grow with us! We're looking for passionate, talented coders to join our rapidly expanding team.</p>
+                <p>We're looking for passionate, talented coders to join our rapidly expanding team. At VIT, we invest in our employees' growth and provide opportunities for advancement in the medical coding field.</p>
                 
                 <div class="positions">
                     <span class="position-tag">HCC Coders</span>
                     <span class="position-tag">QA Specialists</span>
                     <span class="position-tag">OP Coders</span>
+                    <span class="position-tag">Medical Auditors</span>
                 </div>
                 
                 <a href="#contact" class="btn">Apply Now</a>
@@ -894,6 +1075,7 @@
         <div class="container">
             <div class="section-title">
                 <h2>Let's Connect</h2>
+                <p>Get in touch with us for inquiries or collaborations</p>
             </div>
             <div class="contact-grid">
                 <div class="contact-info">
@@ -903,7 +1085,7 @@
                         <div class="contact-icon">
                             <i class="fas fa-map-marker-alt"></i>
                         </div>
-                        <div>
+                        <div class="contact-details">
                             <h4>Address</h4>
                             <p>805, Orathanadu, Thanjavur City, Tamil Nadu, India - 614625</p>
                         </div>
@@ -913,7 +1095,7 @@
                         <div class="contact-icon">
                             <i class="fas fa-phone"></i>
                         </div>
-                        <div>
+                        <div class="contact-details">
                             <h4>Phone</h4>
                             <p>+91 XXXXXXXX</p>
                         </div>
@@ -923,9 +1105,19 @@
                         <div class="contact-icon">
                             <i class="fas fa-envelope"></i>
                         </div>
-                        <div>
+                        <div class="contact-details">
                             <h4>Email</h4>
                             <p>villageinfotechclient@gmail.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Working Hours</h4>
+                            <p>Monday - Saturday: 9AM - 6PM</p>
                         </div>
                     </div>
                 </div>
@@ -934,13 +1126,18 @@
                     <h3>Send us a Message</h3>
                     <form id="contactForm">
                         <div class="form-group">
-                            <label for="name">Name</label>
+                            <label for="name">Full Name</label>
                             <input type="text" id="name" required>
                         </div>
                         
                         <div class="form-group">
-                            <label for="email">Email</label>
+                            <label for="email">Email Address</label>
                             <input type="email" id="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" required>
                         </div>
                         
                         <div class="form-group">
@@ -958,10 +1155,40 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <div class="footer-logo">
-                <img src="Original Color Logo.png" alt="Village INFO Tech Logo">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <img src="Original Color Logo.png" alt="Village INFO Tech Logo">
+                    </div>
+                    <p>Village INFO Tech Health Care delivers accurate, efficient, and HIPAA-compliant medical coding solutions for global healthcare companies.</p>
+                    <p class="logo-tagline">Learning Today..Leading Tomorrow</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#team">Our Team</a></li>
+                        <li><a href="#careers">Careers</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 805, Orathanadu, Thanjavur, Tamil Nadu</p>
+                    <p><i class="fas fa-phone"></i> +91 XXXXXXXX</p>
+                    <p><i class="fas fa-envelope"></i> villageinfotechclient@gmail.com</p>
+                    <p><i class="fas fa-clock"></i> Mon-Sat: 9AM - 6PM</p>
+                </div>
             </div>
-            <p>&copy; 2023 Village INFO Tech. All rights reserved.</p>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 Village INFO Tech Health Care. All rights reserved.</p>
+            </div>
         </div>
     </footer>
 
@@ -969,6 +1196,7 @@
         // Mobile Navigation Toggle
         const hamburger = document.querySelector('.hamburger');
         const navLinks = document.querySelector('.nav-links');
+        const header = document.querySelector('header');
         
         hamburger.addEventListener('click', () => {
             navLinks.classList.toggle('active');
@@ -979,6 +1207,17 @@
             link.addEventListener('click', () => {
                 navLinks.classList.remove('active');
             });
+        });
+        
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.style.padding = '5px 0';
+                header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.padding = '0';
+                header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+            }
         });
         
         // Form submission
@@ -1000,7 +1239,6 @@
                 
                 if (playPromise !== undefined) {
                     playPromise.catch(error => {
-                        // Auto-play was prevented, show controls
                         console.log("Auto-play prevented:", error);
                         document.querySelector('.video-controls').style.display = 'flex';
                     });
@@ -1032,7 +1270,6 @@
         
         // Monitor video for errors and attempt to restart if it stops
         video.addEventListener('pause', function() {
-            // If the video pauses unexpectedly (not by user), try to restart it
             if (!video.ended && !video.seeking) {
                 setTimeout(() => {
                     if (video.paused) {
@@ -1045,8 +1282,6 @@
         // Attempt to play video when page loads
         document.addEventListener('DOMContentLoaded', function() {
             ensureVideoPlays();
-            
-            // Additional check after a short delay
             setTimeout(ensureVideoPlays, 1000);
         });
         
@@ -1062,6 +1297,24 @@
                 video.play().catch(e => console.log("Background video check failed:", e));
             }
         }, 5000);
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
     </script>
 </body>
 </html>
