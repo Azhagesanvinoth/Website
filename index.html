@@ -168,76 +168,154 @@ body{
   </section>
 
   <!-- Services -->
-  <section id="services">
-    <div class="container">
-      <div class="section-head">
-        <h2>Services</h2>
-        <p>Precision. Quality. Compliance. Our delivery model is built to improve risk scores, reduce denials, and ensure payer compliance with accurate documentation and validation.</p>
+<section id="services">
+  <div class="container">
+    <div class="section-head">
+      <h2>Services</h2>
+      <p>Precision. Quality. Compliance. Our delivery model is built to improve risk scores, reduce denials, and ensure payer compliance with accurate documentation and validation.</p>
+    </div>
+    <div class="grid">
+      <div class="card core">
+        <span class="badge">Core</span>
+        <h3>HCC & Risk Adjustment Coding</h3>
+        <p>ICD‑10‑CM coding with strict adherence to payer rules, documentation integrity, and audit‑ready records to support accurate risk adjustment.</p>
+        <ul>
+          <li>Robust capture of chronic conditions</li>
+          <li>Suspect lists & gap closure</li>
+          <li>Coder query workflows</li>
+        </ul>
       </div>
-      <div class="grid">
-        <div class="card">
-          <span class="badge">Core</span>
-          <h3>HCC & Risk Adjustment Coding</h3>
-          <p>ICD‑10‑CM coding with strict adherence to payer rules, documentation integrity, and audit‑ready records to support accurate risk adjustment.</p>
-          <ul>
-            <li>Robust capture of chronic conditions</li>
-            <li>Suspect lists & gap closure</li>
-            <li>Coder query workflows</li>
-          </ul>
-        </div>
-        <div class="card">
-          <span class="badge">New • Feb 2025</span>
-          <h3>Outpatient (OP) Coding</h3>
-          <p>Streamlined OP coding for clinics and ambulatory settings with TAT‑focused SLAs and continuous accuracy monitoring.</p>
-          <ul>
-            <li>Encounter‑level validation</li>
-            <li>TAT: business‑day commitments</li>
-            <li>Escalation & issue logs</li>
-          </ul>
-        </div>
-        <div class="card">
-          <span class="badge">Quality</span>
-          <h3>QA & Audit</h3>
-          <p>Independent quality checks with multi‑tier audits to maintain 95–99%+ accuracy depending on client SLAs.</p>
-          <ul>
-            <li>Dual‑pass and targeted audits</li>
-            <li>Error taxonomy & RCA</li>
-            <li>Corrective action plans</li>
-          </ul>
-        </div>
-        <div class="card">
-          <span class="badge">Support</span>
-          <h3>Client Onboarding & Training</h3>
-          <p>Frictionless onboarding, SOP alignment, and ongoing training to keep your program compliant and efficient.</p>
-          <ul>
-            <li>SOP mapping & playbooks</li>
-            <li>HIPAA & security training</li>
-            <li>Performance dashboards</li>
-          </ul>
-        </div>
-        <div class="card">
-          <span class="badge">Security</span>
-          <h3>HIPAA‑Aligned Processes</h3>
-          <p>Access controls, need‑to‑know policies, and secure communication practices to protect PHI across the lifecycle.</p>
-          <ul>
-            <li>NDA/BAA readiness</li>
-            <li>Audit trails & monitoring</li>
-            <li>Policy documentation</li>
-          </ul>
-        </div>
-        <div class="card">
-          <span class="badge">Value</span>
-          <h3>Scalable Engagement Models</h3>
-          <p>From pilot teams to dedicated pods, scale confidently with transparent pricing and measurable outcomes.</p>
-          <ul>
-            <li>Pilot → scale plans</li>
-            <li>FTE or output‑based</li>
-            <li>Weekly performance reviews</li>
-          </ul>
-        </div>
+      <div class="card new">
+        <span class="badge">New • Feb 2025</span>
+        <h3>Outpatient (OP) Coding</h3>
+        <p>Streamlined OP coding for clinics and ambulatory settings with TAT‑focused SLAs and continuous accuracy monitoring.</p>
+        <ul>
+          <li>Encounter‑level validation</li>
+          <li>TAT: business‑day commitments</li>
+          <li>Escalation & issue logs</li>
+        </ul>
+      </div>
+      <div class="card quality">
+        <span class="badge">Quality</span>
+        <h3>QA & Audit</h3>
+        <p>Independent quality checks with multi‑tier audits to maintain 95–99%+ accuracy depending on client SLAs.</p>
+        <ul>
+          <li>Dual‑pass and targeted audits</li>
+          <li>Error taxonomy & RCA</li>
+          <li>Corrective action plans</li>
+        </ul>
+      </div>
+      <div class="card support">
+        <span class="badge">Support</span>
+        <h3>Client Onboarding & Training</h3>
+        <p>Frictionless onboarding, SOP alignment, and ongoing training to keep your program compliant and efficient.</p>
+        <ul>
+          <li>SOP mapping & playbooks</li>
+          <li>HIPAA & security training</li>
+          <li>Performance dashboards</li>
+        </ul>
+      </div>
+      <div class="card security">
+        <span class="badge">Security</span>
+        <h3>HIPAA‑Aligned Processes</h3>
+        <p>Access controls, need‑to‑know policies, and secure communication practices to protect PHI across the lifecycle.</p>
+        <ul>
+          <li>NDA/BAA readiness</li>
+          <li>Audit trails & monitoring</li>
+          <li>Policy documentation</li>
+        </ul>
+      </div>
+      <div class="card value">
+        <span class="badge">Value</span>
+        <h3>Scalable Engagement Models</h3>
+        <p>From pilot teams to dedicated pods, scale confidently with transparent pricing and measurable outcomes.</p>
+        <ul>
+          <li>Pilot → scale plans</li>
+          <li>FTE or output‑based</li>
+          <li>Weekly performance reviews</li>
+        </ul>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+
+<style>
+  /* Container & Headings */
+  #services {
+    padding: 60px 20px;
+    font-family: 'Arial', sans-serif;
+    background: #f9f9f9;
+  }
+  #services .section-head h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  #services .section-head p {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #555;
+    max-width: 700px;
+    margin: 0 auto 50px auto;
+  }
+
+  /* Grid */
+  #services .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+  }
+
+  /* Cards */
+  #services .card {
+    border-radius: 15px;
+    padding: 25px 20px;
+    color: #fff;
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+  }
+  #services .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+  }
+
+  /* Badges */
+  #services .badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(255,255,255,0.2);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 0.9rem;
+  }
+
+  /* Card Variants */
+  .card.core { background: #ff6b6b; }
+  .card.new { background: #ff9f43; }
+  .card.quality { background: #1dd1a1; }
+  .card.support { background: #54a0ff; }
+  .card.security { background: #5f27cd; }
+  .card.value { background: #f368e0; }
+
+  /* Card Content */
+  #services .card h3 {
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+  }
+  #services .card p {
+    margin-bottom: 15px;
+    font-size: 1rem;
+  }
+  #services .card ul {
+    list-style-type: disc;
+    padding-left: 20px;
+  }
+</style>
+
 
   <!-- About / Milestones -->
   <section id="about">
