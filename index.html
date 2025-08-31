@@ -1611,6 +1611,134 @@
                 }
             });
         });
+         <script>
+        // Previous JavaScript code remains the same
+        
+        // Project data for modals
+        const projectData = {
+            "aetna-mra": {
+                title: "Aetna MRA Project",
+                client: "Aetna",
+                emr: "14,322",
+                date: "December 2023",
+                accuracy: "97.8%",
+                description: "Comprehensive risk adjustment coding for Aetna's Medicare Advantage plans. Our team delivered precise HCC coding with multi-level quality audits, resulting in improved risk scores and reduced denials. The project involved detailed analysis of patient records and coordination with Aetna's clinical teams."
+            },
+            "anthem": {
+                title: "Anthem Outpatient Coding",
+                client: "Anthem",
+                emr: "5,433",
+                date: "March 2024",
+                accuracy: "98.2%",
+                description: "Outpatient coding and audit services for Anthem across multiple specialties. Our certified coders ensured accurate CPT and ICD-10 code assignment, improving claim accuracy and reducing denials. The project included training sessions for Anthem's internal teams on coding best practices."
+            },
+            "centene-aca": {
+                title: "Centene ACA Coding",
+                client: "Centene",
+                emr: "12,922",
+                date: "August 2024",
+                accuracy: "97.5%",
+                description: "ACA chart coding project for Centene, focusing on accurate risk adjustment coding for Affordable Care Act plans. Our team processed a high volume of charts while maintaining strict HIPAA compliance and meeting tight deadlines."
+            },
+            "elevance-ma": {
+                title: "Elevance Medicare Advantage",
+                client: "Elevance Health",
+                emr: "1,433",
+                date: "January 2025",
+                accuracy: "98.5%",
+                description: "Medicare Advantage coding for Elevance Health, ensuring accurate HCC coding and documentation. Our specialized team focused on chronic condition coding and worked closely with Elevance's analytics team to optimize risk adjustment processes."
+            },
+            "anthem-priority": {
+                title: "Anthem Priority Coding",
+                client: "Anthem",
+                emr: "542",
+                date: "June 2024",
+                accuracy: "98.9%",
+                description: "Focused priority coding for high-risk Anthem patients. This project required specialized attention to complex cases with multiple chronic conditions. Our expert coders delivered exceptional accuracy rates, contributing significantly to appropriate risk adjustment."
+            },
+            "aetna-aca": {
+                title: "Aetna ACA Project",
+                client: "Aetna",
+                emr: "10,212",
+                date: "February 2024",
+                accuracy: "97.6%",
+                description: "Affordable Care Act chart coding and risk adjustment for Aetna's outpatient visits. Our team implemented customized coding protocols that improved efficiency while maintaining the highest accuracy standards required for ACA compliance."
+            },
+            "elevance-aca": {
+                title: "Elevance ACA Initiative",
+                client: "Elevance Health",
+                emr: "852",
+                date: "April 2025",
+                accuracy: "98.1%",
+                description: "ACA coding project for Elevance Health, featuring detailed HCC and ICD-10 coding for complex outpatient charts. This initiative included developing specialized coding guidelines for rare conditions and training modules for continuing education."
+            },
+            "centene-ma": {
+                title: "Centene Medicare Advantage",
+                client: "Centene",
+                emr: "9,359",
+                date: "November 2024",
+                accuracy: "97.9%",
+                description: "Medicare Advantage coding project for Centene Corporation, emphasizing accuracy and audit readiness. Our team implemented advanced quality control measures that resulted in exceptional performance during CMS audits and improved risk score accuracy."
+            }
+        };
+
+        // Modal functionality
+        const modal = document.getElementById('projectModal');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalClient = document.getElementById('modalClient');
+        const modalEmr = document.getElementById('modalEmr');
+        const modalDate = document.getElementById('modalDate');
+        const modalAccuracy = document.getElementById('modalAccuracy');
+        const modalDescription = document.getElementById('modalDescription');
+        
+        // Add click event to all project cards
+        document.querySelectorAll('.project-card').forEach(card => {
+            card.addEventListener('click', () => {
+                const projectId = card.getAttribute('data-project');
+                openModal(projectId);
+            });
+        });
+        
+        // Open modal with project data
+        function openModal(projectId) {
+            const project = projectData[projectId];
+            
+            if (project) {
+                modalTitle.textContent = project.title;
+                modalClient.textContent = project.client;
+                modalEmr.textContent = project.emr;
+                modalDate.textContent = project.date;
+                modalAccuracy.textContent = project.accuracy;
+                modalDescription.textContent = project.description;
+                
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden'; // Prevent scrolling
+            }
+        }
+        
+        // Close modal
+        document.querySelectorAll('.close-modal').forEach(button => {
+            button.addEventListener('click', () => {
+                modal.classList.remove('active');
+                document.body.style.overflow = ''; // Re-enable scrolling
+            });
+        });
+        
+        // Close modal when clicking outside content
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+        
+        // Close modal with Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modal.classList.contains('active')) {
+                modal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
     </script>
 </body>
 </html>
