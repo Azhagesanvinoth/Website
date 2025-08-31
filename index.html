@@ -8,49 +8,66 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    header {
-  background: linear-gradient(90deg, #004aad, #0077ff);
+ <style>
+  header {
+  background: linear-gradient(90deg, #ff6b6b, #feca57, #54a0ff, #5f27cd);
   color: white;
-}
-    nav a {
-  color: white;
-  font-weight: bold;
-}
-    .logo img {
-  height: 70px; /* Change size - try 80px or 100px if needed */
-  width: auto;
-}
-   :root{
-  --bg:#0b1220; 
-  --fg:#e8eefc; 
-  --muted:#b6c0d8; 
-  --pri:#6ea8fe; 
-  --pri-2:#7cf7d4; 
-  --card:#121a2c; 
-  --stroke:#23314f; 
-  --accent:#ffd479;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  backdrop-filter: blur(5px);
 }
 
-body{
-  margin:0;
-  font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
-  background:radial-gradient(1200px 600px at 10% -10%, rgba(110,168,254,.18), transparent 60%),
-             radial-gradient(1000px 500px at 90% 0%, rgba(124,247,212,.12), transparent 60%),
-             var(--bg);
-  color:var(--fg);
+.nav a {
+  color: white;
+  font-weight: bold;
+  transition: color 0.3s;
 }
-    a{color:inherit;text-decoration:none}
-    img{max-width:100%;display:block}
-    .container{width:min(1140px, 92%);margin-inline:auto}
-    header{position:sticky;top:0;z-index:50;background:rgba(11,18,32,.85);backdrop-filter: blur(10px); border-bottom:1px solid var(--stroke)}
-    .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
-    .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.3px}
-    .brand .logo{width:38px;height:38px;border-radius:12px;background:linear-gradient(135deg,var(--pri),var(--pri-2));display:grid;place-items:center;font-weight:800;color:#0b1220}
-    .nav a{opacity:.9}
-    .nav-links{display:flex;gap:22px;align-items:center}
-    .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border:1px solid var(--stroke);border-radius:12px;background:#0f1830; color:var(--fg);font-weight:600}
-    .btn.primary{background:linear-gradient(135deg, var(--pri), var(--pri-2)); color:#071122; border:none}
+.nav a:hover {
+  color: #ffd479;
+}
+
+.brand .logo {
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #6ea8fe, #7cf7d4);
+  display: grid;
+  place-items: center;
+  font-weight: 800;
+  color: #0b1220;
+}
+
+.nav-links {
+  display: flex;
+  gap: 22px;
+  align-items: center;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border: 1px solid rgba(255,255,255,0.3);
+  border-radius: 12px;
+  background: rgba(255,255,255,0.15);
+  color: white;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.btn.primary {
+  background: linear-gradient(135deg, #ff6b6b, #54a0ff);
+  color: #071122;
+  border: none;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
 
     /* Hero */
     .hero{position:relative;overflow:hidden}
