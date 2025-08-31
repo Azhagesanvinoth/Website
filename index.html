@@ -21,11 +21,25 @@
   height: 70px; /* Change size - try 80px or 100px if needed */
   width: auto;
 }
-    :root{
-      --bg:#0b1220; --fg:#e8eefc; --muted:#b6c0d8; --pri:#6ea8fe; --pri-2:#7cf7d4; --card:#121a2c; --stroke:#23314f; --accent:#ffd479;
-    }
-    *{box-sizing:border-box}
-    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:radial-gradient(1200px 600px at 10% -10%, rgba(110,168,254,.18), transparent 60%), radial-gradient(1000px 500px at 90% 0%, rgba(124,247,212,.12), transparent 60%), var(--bg);color:var(--fg);}
+   :root{
+  --bg:#0b1220; 
+  --fg:#e8eefc; 
+  --muted:#b6c0d8; 
+  --pri:#6ea8fe; 
+  --pri-2:#7cf7d4; 
+  --card:#121a2c; 
+  --stroke:#23314f; 
+  --accent:#ffd479;
+}
+
+body{
+  margin:0;
+  font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+  background:radial-gradient(1200px 600px at 10% -10%, rgba(110,168,254,.18), transparent 60%),
+             radial-gradient(1000px 500px at 90% 0%, rgba(124,247,212,.12), transparent 60%),
+             var(--bg);
+  color:var(--fg);
+}
     a{color:inherit;text-decoration:none}
     img{max-width:100%;display:block}
     .container{width:min(1140px, 92%);margin-inline:auto}
