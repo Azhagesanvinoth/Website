@@ -480,17 +480,19 @@
         }
         
         .modal-content {
-            background-color:linear-gradient(135deg, #ffffff, #cce0ff);
-            margin: 5% auto;
-            width: 90%;
-            max-width: 800px;
-            border-radius: 12px;
-            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
-            position: relative;
-            transform: translateY(-50px);
-            transition: transform 0.3s ease;
-            padding: 30px;
-        }
+    background: linear-gradient(135deg, #ffffff, #cce0ff); /* gradient background */
+    border: 2px solid var(--primary); /* colored border */
+    margin: 5% auto;
+    width: 90%;
+    max-width: 800px;
+    border-radius: 12px;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+    position: relative;
+    transform: translateY(-50px);
+    transition: transform 0.3s ease;
+    padding: 30px;
+}
+
         
         .modal.active .modal-content {
             transform: translateY(0);
