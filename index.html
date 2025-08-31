@@ -9,49 +9,53 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
  <style>
- /* Header */
+/* Compact Header */
 header {
   background: linear-gradient(90deg, #ff6b6b, #feca57, #54a0ff, #5f27cd);
   color: white;
   position: sticky;
   top: 0;
   z-index: 50;
+  height: 60px; /* Set fixed height */
+  display: flex;
+  align-items: center; /* vertically center content */
+  padding: 0 20px; /* horizontal spacing */
   border-bottom: 1px solid rgba(255,255,255,0.2);
   backdrop-filter: blur(5px);
-  padding: 8px 20px; /* Reduced padding for compactness */
 }
 
-/* Nav Container */
+/* Nav Layout */
 .nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: 100%;
 }
 
 /* Logo */
 .brand .logo {
-  width: 38px;  /* smaller size for web visibility */
-  height: 38px;
+  width: 36px;
+  height: 36px;
   border-radius: 10px;
   background: linear-gradient(135deg, #6ea8fe, #7cf7d4);
   display: grid;
   place-items: center;
   font-weight: 800;
-  font-size: 16px;  /* smaller font */
+  font-size: 14px; /* smaller font */
   color: #0b1220;
 }
 
 /* Nav Links */
 .nav-links {
   display: flex;
-  gap: 18px;
+  gap: 15px;
   align-items: center;
 }
 
 .nav a {
   color: white;
   font-weight: 600;
-  font-size: 0.95rem; /* slightly smaller for compact layout */
+  font-size: 0.9rem;
   transition: color 0.3s;
 }
 .nav a:hover {
@@ -63,37 +67,36 @@ header {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  padding: 8px 14px; /* smaller padding */
-  border: 1px solid rgba(255,255,255,0.3);
+  padding: 6px 12px; /* smaller padding */
   border-radius: 10px;
+  font-size: 0.85rem; /* smaller text */
+  font-weight: 600;
+  border: none;
   background: rgba(255,255,255,0.15);
   color: white;
-  font-weight: 600;
-  font-size: 0.9rem; /* smaller font */
   transition: all 0.3s;
 }
 
 .btn.primary {
   background: linear-gradient(135deg, #ff6b6b, #54a0ff);
   color: #071122;
-  border: none;
 }
 
 .btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
   .nav-links {
-    gap: 12px;
+    gap: 10px;
   }
   .btn, .nav a {
-    font-size: 0.85rem;
-    padding: 6px 10px;
+    font-size: 0.8rem;
+    padding: 4px 10px;
   }
-
+}
 
     /* Hero */
     .hero{position:relative;overflow:hidden}
