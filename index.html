@@ -118,14 +118,41 @@
             padding: 20px 0;
         }
         
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--primary);
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
         }
         
-        .logo span {
+        .logo {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            line-height: 1;
+        }
+        
+        .logo-main {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--primary);
+            letter-spacing: 1px;
+        }
+        
+        .logo-sub {
+            font-size: 1.3rem;
+            font-weight: 600;
             color: var(--accent);
+            letter-spacing: 2px;
+            margin-top: -5px;
+        }
+        
+        .logo-tagline {
+            font-size: 0.7rem;
+            color: #666;
+            font-style: italic;
+            margin-top: 3px;
+            border-top: 1px solid #ddd;
+            padding-top: 3px;
         }
         
         .nav-links {
@@ -151,6 +178,8 @@
         .hamburger {
             display: none;
             cursor: pointer;
+            font-size: 1.5rem;
+            color: var(--primary);
         }
         
         /* Hero Section */
@@ -420,6 +449,10 @@
             text-align: center;
         }
         
+        .footer-logo {
+            margin-bottom: 20px;
+        }
+        
         /* Responsive Design */
         @media (max-width: 992px) {
             .about-content {
@@ -466,6 +499,10 @@
             .hero-content h1 {
                 font-size: 2.5rem;
             }
+            
+            .logo-tagline {
+                display: none;
+            }
         }
         
         @media (max-width: 576px) {
@@ -485,6 +522,14 @@
                 flex-direction: column;
                 gap: 20px;
             }
+            
+            .logo-main {
+                font-size: 1.8rem;
+            }
+            
+            .logo-sub {
+                font-size: 1rem;
+            }
         }
     </style>
 </head>
@@ -493,7 +538,13 @@
     <header>
         <div class="container">
             <nav>
-                <div class="logo">Village <span>INFO</span> Tech</div>
+                <div class="logo-container">
+                    <div class="logo">
+                        <div class="logo-main">VILLAGE</div>
+                        <div class="logo-sub">INFO TECH</div>
+                        <div class="logo-tagline">Learning Today..Leading Tomorrow</div>
+                    </div>
+                </div>
                 <ul class="nav-links">
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">About Us</a></li>
@@ -795,6 +846,13 @@
     <!-- Footer -->
     <footer>
         <div class="container">
+            <div class="footer-logo">
+                <div class="logo">
+                    <div class="logo-main">VILLAGE</div>
+                    <div class="logo-sub">INFO TECH</div>
+                    <div class="logo-tagline">Learning Today..Leading Tomorrow</div>
+                </div>
+            </div>
             <p>&copy; 2023 Village INFO Tech. All rights reserved.</p>
         </div>
     </footer>
