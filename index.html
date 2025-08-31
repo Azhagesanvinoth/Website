@@ -1137,71 +1137,111 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="projects">
+     <section id="projects" class="projects">
         <div class="container">
             <div class="section-title">
                 <h2>Projects & Achievements</h2>
                 <p>Our successful collaborations and milestones in medical coding</p>
             </div>
-              <div class="project-card" style="background:white; padding:25px; border-radius:12px; box-shadow:0 5px 20px rgba(44,90,160,0.08); border:1px solid rgba(44,90,160,0.1);">
-                <h3>Aetna MRA</h3>
-                <p>Managed Risk Adjustment coding for Aetna, ensuring precise HCC and OP coding.</p>
-                <p><strong>EMR Reports:</strong> 14,322</p>
-                <p><strong>Date:</strong> Dec 2023</p>
-            </div>
             
-            <div class="project-card" style="background:white; padding:25px; border-radius:12px; box-shadow:0 5px 20px rgba(44,90,160,0.08); border:1px solid rgba(44,90,160,0.1);">
-                <h3>Anthem</h3>
-                <p>Outpatient coding and audit services for Anthem, delivering high accuracy and compliance.</p>
-                <p><strong>EMR Reports:</strong> 5,433</p>
-                <p><strong>Date:</strong> Mar 2024</p>
+            <div class="projects-grid">
+                <!-- Project Cards with data attributes for modal content -->
+                <div class="project-card" data-project="aetna-mra">
+                    <h3>Aetna MRA</h3>
+                    <p>Managed Risk Adjustment coding for Aetna, ensuring precise HCC and OP coding.</p>
+                    <p><strong>EMR Reports:</strong> 14,322</p>
+                    <p><strong>Date:</strong> Dec 2023</p>
+                </div>
+                
+                <div class="project-card" data-project="anthem">
+                    <h3>Anthem</h3>
+                    <p>Outpatient coding and audit services for Anthem, delivering high accuracy and compliance.</p>
+                    <p><strong>EMR Reports:</strong> 5,433</p>
+                    <p><strong>Date:</strong> Mar 2024</p>
+                </div>
+                
+                <div class="project-card" data-project="centene-aca">
+                    <h3>Centene ACA</h3>
+                    <p>ACA chart coding for Centene, supporting clinics with fast, HIPAA-compliant processing.</p>
+                    <p><strong>EMR Reports:</strong> 12,922</p>
+                    <p><strong>Date:</strong> Aug 2024</p>
+                </div>
+                
+                <div class="project-card" data-project="elevance-ma">
+                    <h3>Elevance MA</h3>
+                    <p>Medicare Advantage coding for Elevance, ensuring high accuracy and timely submission.</p>
+                    <p><strong>EMR Reports:</strong> 1,433</p>
+                    <p><strong>Date:</strong> Jan 2025</p>
+                </div>
+                
+                <div class="project-card" data-project="anthem-priority">
+                    <h3>Anthem Priority</h3>
+                    <p>Focused priority coding for high-risk patients, ensuring correct HCC and CPT coding.</p>
+                    <p><strong>EMR Reports:</strong> 542</p>
+                    <p><strong>Date:</strong> Jun 2024</p>
+                </div>
+                
+                <div class="project-card" data-project="aetna-aca">
+                    <h3>Aetna ACA</h3>
+                    <p>Affordable Care Act (ACA) chart coding and risk adjustment for outpatient visits.</p>
+                    <p><strong>EMR Reports:</strong> 10,212</p>
+                    <p><strong>Date:</strong> Feb 2024</p>
+                </div>
+                
+                <div class="project-card" data-project="elevance-aca">
+                    <h3>Elevance ACA</h3>
+                    <p>ACA coding for Elevance, including detailed HCC and ICD-10 coding for outpatient charts.</p>
+                    <p><strong>EMR Reports:</strong> 852</p>
+                    <p><strong>Date:</strong> Apr 2025</p>
+                </div>
+                
+                <div class="project-card" data-project="centene-ma">
+                    <h3>Centene MA</h3>
+                    <p>Medicare Advantage coding project for Centene, emphasizing accuracy and audit readiness.</p>
+                    <p><strong>EMR Reports:</strong> 9,359</p>
+                    <p><strong>Date:</strong> Nov 2024</p>
+                </div>
             </div>
-            
-            <div class="project-card" style="background:white; padding:25px; border-radius:12px; box-shadow:0 5px 20px rgba(44,90,160,0.08); border:1px solid rgba(44,90,160,0.1);">
-                <h3>Centene ACA</h3>
-                <p>ACA chart coding for Centene, supporting clinics with fast, HIPAA-compliant processing.</p>
-                <p><strong>EMR Reports:</strong> 12,922</p>
-                <p><strong>Date:</strong> Aug 2024</p>
+        </div>
+    </section>
+
+    <!-- Project Modal -->
+    <div class="modal" id="projectModal">
+        <div class="modal-content">
+            <button class="close-modal">&times;</button>
+            <div class="modal-header">
+                <h2 id="modalTitle">Project Title</h2>
             </div>
-            
-            <div class="project-card" style="background:white; padding:25px; border-radius:12px; box-shadow:0 5px 20px rgba(44,90,160,0.08); border:1px solid rgba(44,90,160,0.1);">
-                <h3>Elevance MA</h3>
-                <p>Medicare Advantage coding for Elevance, ensuring high accuracy and timely submission.</p>
-                <p><strong>EMR Reports:</strong> 1,433</p>
-                <p><strong>Date:</strong> Jan 2025</p>
+            <div class="modal-body">
+                <div class="project-details">
+                    <div class="detail-item">
+                        <h4>Client</h4>
+                        <p id="modalClient">Client Name</p>
+                    </div>
+                    <div class="detail-item">
+                        <h4>EMR Reports</h4>
+                        <p id="modalEmr">0</p>
+                    </div>
+                    <div class="detail-item">
+                        <h4>Completion Date</h4>
+                        <p id="modalDate">Date</p>
+                    </div>
+                    <div class="detail-item">
+                        <h4>Accuracy Rate</h4>
+                        <p id="modalAccuracy">98%</p>
+                    </div>
+                </div>
+                <div class="modal-description">
+                    <p id="modalDescription">Project description will appear here.</p>
+                </div>
             </div>
-            
-            <div class="project-card" style="background:white; padding:25px; border-radius:12px; box-shadow:0 5px 20px rgba(44,90,160,0.08); border:1px solid rgba(44,90,160,0.1);">
-                <h3>Anthem Priority</h3>
-                <p>Focused priority coding for high-risk patients, ensuring correct HCC and CPT coding.</p>
-                <p><strong>EMR Reports:</strong> 542</p>
-                <p><strong>Date:</strong> Jun 2024</p>
+            <div class="modal-footer">
+                <button class="btn btn-outline close-modal">Close</button>
+                <a href="#contact" class="btn">Start Similar Project</a>
             </div>
-            
-            <div class="project-card" style="background:white; padding:25px; border-radius:12px; box-shadow:0 5px 20px rgba(44,90,160,0.08); border:1px solid rgba(44,90,160,0.1);">
-                <h3>Aetna ACA</h3>
-                <p>Affordable Care Act (ACA) chart coding and risk adjustment for outpatient visits.</p>
-                <p><strong>EMR Reports:</strong> 10,212</p>
-                <p><strong>Date:</strong> Feb 2024</p>
-            </div>
-            
-            <div class="project-card" style="background:white; padding:25px; border-radius:12px; box-shadow:0 5px 20px rgba(44,90,160,0.08); border:1px solid rgba(44,90,160,0.1);">
-                <h3>Elevance ACA</h3>
-                <p>ACA coding for Elevance, including detailed HCC and ICD-10 coding for outpatient charts.</p>
-                <p><strong>EMR Reports:</strong> 852</p>
-                <p><strong>Date:</strong> Apr 2025</p>
-            </div>
-            
-            <div class="project-card" style="background:white; padding:25px; border-radius:12px; box-shadow:0 5px 20px rgba(44,90,160,0.08); border:1px solid rgba(44,90,160,0.1);">
-                <h3>Centene MA</h3>
-                <p>Medicare Advantage coding project for Centene, emphasizing accuracy and audit readiness.</p>
-                <p><strong>EMR Reports:</strong> 9,359</p>
-                <p><strong>Date:</strong> Nov 2024</p>
-            </div>
-            
         </div>
     </div>
-</section>
+
 
     <!-- Team Section -->
     <section id="team" class="team">
