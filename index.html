@@ -182,22 +182,60 @@
             color: var(--primary);
         }
         
-        /* Hero Section */
+        /* Hero Section with Video Background */
         .hero {
             height: 100vh;
             display: flex;
             align-items: center;
-            background: linear-gradient(rgba(44, 90, 160, 0.8), rgba(44, 90, 160, 0.8)), url('Untitled design (1).mp4');
-            background-size: cover;
-            background-position: center;
+            position: relative;
             color: white;
             text-align: center;
+            overflow: hidden;
+        }
+        
+        .video-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+        
+        .video-background video {
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+        }
+        
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(44, 90, 160, 0.85);
+            z-index: 0;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            width: 100%;
         }
         
         .hero-content h1 {
             font-size: 3.5rem;
             margin-bottom: 20px;
             color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
         
         .hero-content p {
@@ -206,12 +244,41 @@
             max-width: 800px;
             margin-left: auto;
             margin-right: auto;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
         }
         
         .hero-buttons {
             display: flex;
             justify-content: center;
             gap: 20px;
+        }
+        
+        /* Video Controls */
+        .video-controls {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            z-index: 2;
+            display: flex;
+            gap: 10px;
+        }
+        
+        .video-control-btn {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s ease;
+        }
+        
+        .video-control-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
         }
         
         /* About Section */
@@ -503,6 +570,11 @@
             .logo-tagline {
                 display: none;
             }
+            
+            .video-controls {
+                bottom: 10px;
+                right: 10px;
+            }
         }
         
         @media (max-width: 576px) {
@@ -530,6 +602,10 @@
             .logo-sub {
                 font-size: 1rem;
             }
+            
+            .video-controls {
+                display: none; /* Hide controls on very small screens */
+            }
         }
     </style>
 </head>
@@ -550,7 +626,7 @@
                     <li><a href="#about">About Us</a></li>
                     <li><a href="#services">Services</a></li>
                     <li><a href="#projects">Projects</a></li>
-                    <li><a href="#team">Team</a></li>
+                    <li><a href#team">Team</a></li>
                     <li><a href="#why">Why Choose Us</a></li>
                     <li><a href="#careers">Careers</a></li>
                     <li><a href="#contact">Contact</a></li>
@@ -562,8 +638,26 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
+    <!-- Hero Section with Video Background -->
     <section id="home" class="hero">
+        <div class="video-background">
+            <!-- Replace with your actual video file -->
+            <video autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80">
+                <source src="Untitled design (1).mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="video-overlay"></div>
+        </div>
+        
+        <div class="video-controls">
+            <button class="video-control-btn" id="playPauseBtn">
+                <i class="fas fa-pause"></i>
+            </button>
+            <button class="video-control-btn" id="muteUnmuteBtn">
+                <i class="fas fa-volume-up"></i>
+            </button>
+        </div>
+        
         <div class="container">
             <div class="hero-content">
                 <h1>Village INFO Tech – Your Trusted Medical Coding Partner</h1>
@@ -878,6 +972,38 @@
             e.preventDefault();
             alert('Thank you for your message! We will get back to you soon.');
             this.reset();
+        });
+        
+        // Video Controls
+        const video = document.querySelector('.video-background video');
+        const playPauseBtn = document.getElementById('playPauseBtn');
+        const muteUnmuteBtn = document.getElementById('muteUnmuteBtn');
+        
+        // Play/Pause functionality
+        playPauseBtn.addEventListener('click', () => {
+            if (video.paused) {
+                video.play();
+                playPauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
+            } else {
+                video.pause();
+                playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
+            }
+        });
+        
+        // Mute/Unmute functionality
+        muteUnmuteBtn.addEventListener('click', () => {
+            if (video.muted) {
+                video.muted = false;
+                muteUnmuteBtn.innerHTML = '<i class="fas fa-volume-up"></i>';
+            } else {
+                video.muted = true;
+                muteUnmuteBtn.innerHTML = '<i class="fas fa-volume-mute"></i>';
+            }
+        });
+        
+        // Ensure video plays correctly on mobile devices
+        document.addEventListener('DOMContentLoaded', function() {
+            video.play();
         });
     </script>
 </body>
