@@ -1,344 +1,395 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Leading medical coding and healthcare IT solutions provider.">
-  <meta name="keywords" content="Medical Coding, Healthcare IT, Technology Solutions, Consulting, Careers">
-  <meta name="author" content="Village IT Healthcare">
-  <title>Village IT Healthcare - Medical Coding & IT Solutions</title>
-
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Village INFO Tech (VIT) – Medical Coding Services</title>
+  <meta name="description" content="Village INFO Tech (VIT) provides accurate, efficient, HIPAA-compliant medical coding services including HCC, Risk Adjustment, and OP coding." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
-    /* Moving Gradient Background */
-body {
-  margin: 0;
-  font-family: 'Segoe UI', Arial, sans-serif;
-  color: #fff;
-  background: linear-gradient(-45deg, #0d0d0d, #1c1c1c, #111827, #0f2027);
-  background-size: 400% 400%;
-  animation: gradientMove 12s ease infinite;
-}
+    :root{
+      --bg:#0b1220; --fg:#e8eefc; --muted:#b6c0d8; --pri:#6ea8fe; --pri-2:#7cf7d4; --card:#121a2c; --stroke:#23314f; --accent:#ffd479;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:radial-gradient(1200px 600px at 10% -10%, rgba(110,168,254,.18), transparent 60%), radial-gradient(1000px 500px at 90% 0%, rgba(124,247,212,.12), transparent 60%), var(--bg);color:var(--fg);}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    .container{width:min(1140px, 92%);margin-inline:auto}
+    header{position:sticky;top:0;z-index:50;background:rgba(11,18,32,.85);backdrop-filter: blur(10px); border-bottom:1px solid var(--stroke)}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.3px}
+    .brand .logo{width:38px;height:38px;border-radius:12px;background:linear-gradient(135deg,var(--pri),var(--pri-2));display:grid;place-items:center;font-weight:800;color:#0b1220}
+    .nav a{opacity:.9}
+    .nav-links{display:flex;gap:22px;align-items:center}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border:1px solid var(--stroke);border-radius:12px;background:#0f1830; color:var(--fg);font-weight:600}
+    .btn.primary{background:linear-gradient(135deg, var(--pri), var(--pri-2)); color:#071122; border:none}
 
-@keyframes gradientMove {
-  0% {background-position: 0% 50%;}
-  50% {background-position: 100% 50%;}
-  100% {background-position: 0% 50%;}
-}
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Arial, sans-serif;
-      background: #f4f4f9;
-      color: #333;
-      line-height: 1.6;
-    }
+    /* Hero */
+    .hero{position:relative;overflow:hidden}
+    .hero-wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center;min-height:72vh;padding:56px 0}
+    .chip{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border:1px solid var(--stroke);border-radius:999px;font-size:13px;color:var(--muted)}
+    h1{font-size:clamp(28px, 4.8vw, 54px);line-height:1.05;margin:14px 0 12px}
+    .lead{font-size:clamp(16px, 1.4vw, 18px);color:var(--muted);max-width:62ch}
+    .cta{display:flex;gap:14px;margin-top:18px;flex-wrap:wrap}
+    .hero-stats{display:grid;grid-template-columns:repeat(3, minmax(0,1fr));gap:14px;margin-top:26px}
+    .stat{background:var(--card);border:1px solid var(--stroke);border-radius:16px;padding:16px}
+    .stat b{font-size:22px}
 
-    /* ===== HEADER ===== */
-    header {
-      background: linear-gradient(135deg, #0d0d0d, #1c1c1c);
-      padding: 15px 40px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-    header img {
-      height: 70px;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 1.8rem;
-      color: #ff9800;
-      font-weight: 700;
-    }
+    /* Sections */
+    section{padding:70px 0;border-top:1px solid var(--stroke)}
+    .section-head{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;margin-bottom:28px}
+    .section-head h2{font-size:28px;margin:0}
+    .section-head p{color:var(--muted);max-width:70ch}
 
-    /* ===== NAV ===== */
-    nav {
-      display: flex;
-      gap: 25px;
-    }
-    nav a {
-      text-decoration: none;
-      color: #fff;
-      font-size: 1rem;
-      font-weight: 500;
-      transition: color 0.3s;
-    }
-    nav a:hover {
-      color: #ff9800;
-    }
+    /* Cards grid */
+    .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+    .card{background:var(--card);border:1px solid var(--stroke);border-radius:18px;padding:18px}
+    .card h3{margin:8px 0 6px;font-size:20px}
+    .badge{display:inline-block;font-size:12px;padding:4px 8px;border:1px solid var(--stroke);border-radius:999px;color:var(--muted)}
 
-    /* ===== HERO ===== */
-<div class="hero">
-  <video autoplay muted loop playsinline class="hero-video">
-    <source src="Untitled design (1).mp4" type="video/mp4">
-  </video>
-  <div class="hero-content">
-    <h2>Empowering Healthcare with Coding & IT Solutions</h2>
-    <p>Trusted partner for Medical Coding, Compliance, and Technology worldwide.</p>
-  </div>
-</div>
-  .hero {
-  position: relative;
-  height: 500px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  overflow: hidden;
-}
+    /* Timeline */
+    .timeline{display:grid;gap:12px}
+    .tl-item{display:grid;grid-template-columns:120px 1fr;gap:14px;align-items:start}
+    .tl-item .when{color:var(--muted)}
+    .tl-item .dot{width:10px;height:10px;border-radius:50%;background:var(--accent);display:inline-block;margin-right:8px}
 
-.hero-video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 0;
-}
+    /* Why choose */
+    .why{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+    .why .point{background:var(--card);border:1px solid var(--stroke);border-radius:16px;padding:16px}
 
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.6); /* dark overlay */
-  z-index: 1;
-}
+    /* Careers */
+    .career-row{display:grid;grid-template-columns:1.2fr .8fr;gap:18px}
 
-.hero-content {
-  position: relative;
-  z-index: 2;
-  color: #fff;
-  padding: 20px;
-}
+    /* Contact */
+    form{display:grid;gap:12px}
+    input, textarea, select{background:#0f1830;border:1px solid var(--stroke);color:var(--fg);border-radius:12px;padding:12px;font:inherit}
+    textarea{min-height:120px;resize:vertical}
 
+    .foot{padding:28px 0;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
 
-    /* ===== CONTAINER ===== */
-    .container {
-      max-width: 1200px;
-      margin: 40px auto;
-      padding: 20px;
+    /* Responsive */
+    @media (max-width: 960px){
+      .hero-wrap{grid-template-columns:1fr}
+      .grid{grid-template-columns:1fr 1fr}
+      .why{grid-template-columns:1fr 1fr}
+      .career-row{grid-template-columns:1fr}
     }
-    section {
-      margin-bottom: 40px;
-    }
-    h2 {
-      color: #ff9800;
-      font-size: 2rem;
-      margin-bottom: 15px;
-      text-align: center;
-    }
-    p, li {
-      font-size: 1rem;
-      color: #444;
+    @media (max-width: 640px){
+      .grid, .why{grid-template-columns:1fr}
+      .hero-stats{grid-template-columns:1fr 1fr}
+      .nav-links{display:none}
     }
 
-    /* ===== SERVICES ===== */
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 30px;
-      margin-top: 20px;
-    }
-    .service-card {
-      background: #fff;
-      padding: 25px;
-      border-radius: 12px;
-      text-align: center;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-      transition: 0.3s;
-    }
-    .service-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-    }
-    .service-card img {
-      width: 90px;
-      margin-bottom: 20px;
-    }
-    .service-card h3 {
-      margin-bottom: 12px;
-      color: #0066cc;
-    }
-
-    /* ===== CONTACT FORM ===== */
-    .form-section {
-      background: #fafafa;
-      padding: 50px 20px;
-      border-radius: 12px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    }
-    .form-container {
-      max-width: 800px;
-      margin: auto;
-    }
-    form {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-    }
-    label {
-      font-weight: bold;
-      color: #444;
-    }
-    input, select, textarea {
-      width: 100%;
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-    }
-    textarea {
-      grid-column: span 2;
-      min-height: 120px;
-    }
-    .btn {
-      grid-column: span 2;
-      text-align: center;
-    }
-    button {
-      background: #ff9800;
-      color: #fff;
-      border: none;
-      padding: 12px 28px;
-      font-size: 16px;
-      border-radius: 30px;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-    button:hover {
-      background: #e68900;
-    }
-
-    /* ===== FOOTER ===== */
-    footer {
-      background: #0d0d0d;
-      color: #ccc;
-      text-align: center;
-      padding: 20px;
-      margin-top: 40px;
-    }
-    footer a {
-      color: #ff9800;
-      text-decoration: none;
-    }
-    footer a:hover {
-      text-decoration: underline;
-    }
+    /* Floating gradient orbs */
+    .orb{position:absolute;inset:auto;filter:blur(60px);opacity:.35;pointer-events:none}
+    .orb.a{width:380px;height:380px;background:radial-gradient(circle at 30% 30%, var(--pri), transparent 60%);top:-40px;left:-60px}
+    .orb.b{width:420px;height:420px;background:radial-gradient(circle at 70% 70%, var(--pri-2), transparent 60%);bottom:-80px;right:-40px}
   </style>
 </head>
 <body>
-
-  <!-- HEADER -->
+  <!-- Header -->
   <header>
-    <div style="display:flex; align-items:center; gap:15px;">
-      <img src="Original_Color_Logo.png" alt="Village IT Logo">
-      <h1>Village IT Healthcare</h1>
+    <div class="container nav">
+      <a class="brand" href="#home">
+        <span class="logo">V</span>
+        <span>Village INFO Tech</span>
+      </a>
+      <nav class="nav-links">
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#why">Why VIT</a>
+        <a href="#careers">Careers</a>
+        <a href="#contact" class="btn">Contact</a>
+      </nav>
     </div>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#services">Services</a>
-      <a href="#mission">Mission</a>
-      <a href="#career">Careers</a>
-      <a href="#contact">Contact</a>
-    </nav>
   </header>
 
-  <!-- HERO -->
-  <div class="hero">
-    <div>
-      <h2>Empowering Healthcare with Coding & IT Solutions</h2>
-      <p>Trusted partner for Medical Coding, Compliance, and Technology worldwide.</p>
+  <!-- Hero -->
+  <section id="home" class="hero">
+    <div class="orb a"></div><div class="orb b"></div>
+    <div class="container hero-wrap">
+      <div>
+        <span class="chip">HIPAA-Ready • Risk Adjustment • Quality Audits</span>
+        <h1>Trusted Medical Coding Partner for Growth‑Focused Healthcare Teams</h1>
+        <p class="lead">VIT delivers precise, efficient, and compliant coding solutions across HCC, Risk Adjustment, and Outpatient workflows—so you can focus on patient care and performance.</p>
+        <div class="cta">
+          <a href="#contact" class="btn primary">Get a Proposal</a>
+          <a href="#services" class="btn">Explore Services</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat"><b>Founded 2023</b><br><span class="muted">Tamil Nadu, India</span></div>
+          <div class="stat"><b>25+ Specialists</b><br><span class="muted">Coding & QA</span></div>
+          <div class="stat"><b>7 Projects • 3 Clients</b><br><span class="muted">Delivered successfully</span></div>
+        </div>
+      </div>
+      <div>
+        <div class="card">
+          <span class="badge">At a Glance</span>
+          <h3>What We Do</h3>
+          <p style="color:var(--muted)">End‑to‑end HCC & OP coding, rigorous quality audits, seamless client onboarding, and secure data handling aligned with HIPAA requirements.</p>
+          <ul>
+            <li>HCC & Risk Adjustment Coding</li>
+            <li>Outpatient (OP) Coding <span class="badge">Starts Feb 2025</span></li>
+            <li>Multi‑layer QA & Audit</li>
+            <li>Client Training & Support</li>
+          </ul>
+        </div>
+      </div>
     </div>
-  </div>
+  </section>
 
-  <div class="container">
-    <!-- ABOUT -->
-    <section id="about">
-      <h2>About Us</h2>
-      <p>
-        <strong>Village IT Healthcare</strong>, founded in <strong>2023</strong>, is a global 
-        provider of <b>Medical Coding</b>, <b>Healthcare IT</b>, and <b>Technology Solutions</b>.  
-        We streamline billing processes, ensure compliance, and empower healthcare 
-        providers with modern IT solutions.
-      </p>
-    </section>
-
-    <!-- SERVICES -->
-    <section id="services">
-      <h2>Our Services</h2>
-      <div class="services-grid">
-        <div class="service-card">
-          <img src="https://img.icons8.com/ios-filled/70/4a90e2/medical-doctor.png" alt="Medical Coding">
-          <h3>Medical Coding</h3>
-          <p>ICD-10, CPT, and HCPCS coding with compliance and faster reimbursements.</p>
+  <!-- Services -->
+  <section id="services">
+    <div class="container">
+      <div class="section-head">
+        <h2>Services</h2>
+        <p>Precision. Quality. Compliance. Our delivery model is built to improve risk scores, reduce denials, and ensure payer compliance with accurate documentation and validation.</p>
+      </div>
+      <div class="grid">
+        <div class="card">
+          <span class="badge">Core</span>
+          <h3>HCC & Risk Adjustment Coding</h3>
+          <p>ICD‑10‑CM coding with strict adherence to payer rules, documentation integrity, and audit‑ready records to support accurate risk adjustment.</p>
+          <ul>
+            <li>Robust capture of chronic conditions</li>
+            <li>Suspect lists & gap closure</li>
+            <li>Coder query workflows</li>
+          </ul>
         </div>
-        <div class="service-card">
-          <img src="Professinal training.png" alt="Training">
-          <h3>Training</h3>
-          <p>Industry-ready training programs for professionals and students in coding & IT.</p>
+        <div class="card">
+          <span class="badge">New • Feb 2025</span>
+          <h3>Outpatient (OP) Coding</h3>
+          <p>Streamlined OP coding for clinics and ambulatory settings with TAT‑focused SLAs and continuous accuracy monitoring.</p>
+          <ul>
+            <li>Encounter‑level validation</li>
+            <li>TAT: business‑day commitments</li>
+            <li>Escalation & issue logs</li>
+          </ul>
         </div>
-        <div class="service-card">
-          <img src="https://img.icons8.com/ios-filled/70/4a90e2/data-configuration.png" alt="IT Solutions">
-          <h3>Healthcare IT</h3>
-          <p>Software integration, automation, and customized IT solutions for healthcare.</p>
+        <div class="card">
+          <span class="badge">Quality</span>
+          <h3>QA & Audit</h3>
+          <p>Independent quality checks with multi‑tier audits to maintain 95–99%+ accuracy depending on client SLAs.</p>
+          <ul>
+            <li>Dual‑pass and targeted audits</li>
+            <li>Error taxonomy & RCA</li>
+            <li>Corrective action plans</li>
+          </ul>
         </div>
-        <div class="service-card">
-          <img src="https://img.icons8.com/ios-filled/70/4a90e2/business.png" alt="Consulting">
-          <h3>Consulting</h3>
-          <p>HIPAA compliance, audits, and advisory support for healthcare providers.</p>
+        <div class="card">
+          <span class="badge">Support</span>
+          <h3>Client Onboarding & Training</h3>
+          <p>Frictionless onboarding, SOP alignment, and ongoing training to keep your program compliant and efficient.</p>
+          <ul>
+            <li>SOP mapping & playbooks</li>
+            <li>HIPAA & security training</li>
+            <li>Performance dashboards</li>
+          </ul>
+        </div>
+        <div class="card">
+          <span class="badge">Security</span>
+          <h3>HIPAA‑Aligned Processes</h3>
+          <p>Access controls, need‑to‑know policies, and secure communication practices to protect PHI across the lifecycle.</p>
+          <ul>
+            <li>NDA/BAA readiness</li>
+            <li>Audit trails & monitoring</li>
+            <li>Policy documentation</li>
+          </ul>
+        </div>
+        <div class="card">
+          <span class="badge">Value</span>
+          <h3>Scalable Engagement Models</h3>
+          <p>From pilot teams to dedicated pods, scale confidently with transparent pricing and measurable outcomes.</p>
+          <ul>
+            <li>Pilot → scale plans</li>
+            <li>FTE or output‑based</li>
+            <li>Weekly performance reviews</li>
+          </ul>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- MISSION -->
-    <section id="mission">
-      <h2>Our Mission</h2>
-      <p>To transform healthcare documentation through precision, compliance, and innovation — enabling organizations to focus on patient care.</p>
-    </section>
+  <!-- About / Milestones -->
+  <section id="about">
+    <div class="container">
+      <div class="section-head">
+        <h2>About VIT</h2>
+        <p>Village INFO Tech is a medical coding company headquartered in Tamil Nadu, India. Since 2023 we’ve focused on dependable HCC and OP coding with strong quality controls and client‑first support.</p>
+      </div>
+      <div class="timeline">
+        <div class="tl-item">
+          <div class="when"><span class="dot"></span>2023</div>
+          <div>VIT founded in Tamil Nadu with a focus on Risk Adjustment and coder development.</div>
+        </div>
+        <div class="tl-item">
+          <div class="when"><span class="dot"></span>2024</div>
+          <div>Delivered 7 projects for 3 healthcare clients with high satisfaction, expanded QA and audit capabilities.</div>
+        </div>
+        <div class="tl-item">
+          <div class="when"><span class="dot"></span>2025</div>
+          <div>Launching Outpatient (OP) coding and scaling delivery pods to serve new U.S. partners.</div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <!-- CAREERS -->
-    <section id="career">
-      <h2>Careers</h2>
-      <p>
-        Join <b>Village IT Healthcare</b> and grow with us in the fields of <b>Medical Coding</b>, 
-        <b>Healthcare IT</b>, and <b>Technology Solutions</b>.
-      </p>
-      <ul>
-        <li>Medical Coding Specialists</li>
-        <li>Healthcare IT Analysts</li>
-        <li>Software Developers</li>
-        <li>Training Faculty</li>
-      </ul>
-      <p>Send your resume to <a href="mailto:villageinfotechclient@gmail.com">villageinfotechclient@gmail.com</a></p>
-    </section>
+  <!-- Projects / Achievements -->
+  <section id="projects">
+    <div class="container">
+      <div class="section-head">
+        <h2>Projects & Outcomes</h2>
+        <p>We focus on measurable performance—accuracy, speed, and compliance. Here are highlights from recent engagements.</p>
+      </div>
+      <div class="grid">
+        <div class="card">
+          <h3>Risk Adjustment Delivery</h3>
+          <p>Completed thousands of Risk Adjustment charts with strong documentation integrity; maintained audit‑ready status.</p>
+          <ul>
+            <li>High accuracy rates supported by dual‑pass QA</li>
+            <li>Coder queries resolved within SLA windows</li>
+            <li>Clear audit trails and RCA for corrections</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Quality Program</h3>
+          <p>Implemented layered QA and error taxonomy to reduce repeat errors and improve first‑pass yield.</p>
+          <ul>
+            <li>Weekly calibration sessions</li>
+            <li>Trend analysis & feedback loops</li>
+            <li>Compliance checklists embedded</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Scalable Pods</h3>
+          <p>Introduced pod‑based delivery for predictable scaling without compromising on quality or TAT.</p>
+          <ul>
+            <li>Pilot → stable scale within weeks</li>
+            <li>Role clarity & SOP playbooks</li>
+            <li>Transparent metrics & reporting</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <!-- CONTACT -->
-    <section id="contact" class="form-section">
-      <div class="form-container">
+  <!-- Why Choose VIT -->
+  <section id="why">
+    <div class="container">
+      <div class="section-head">
+        <h2>Why Choose VIT</h2>
+        <p>Reliable delivery, clear communication, and secure handling of PHI—built into our DNA.</p>
+      </div>
+      <div class="why">
+        <div class="point">
+          <h3>Compliance‑First</h3>
+          <p>HIPAA‑aligned processes, access controls, and data handling discipline across every workflow.</p>
+        </div>
+        <div class="point">
+          <h3>Proven Quality</h3>
+          <p>Multi‑tier QA targeting 95–99%+ accuracy with root‑cause fixes and calibration.</p>
+        </div>
+        <div class="point">
+          <h3>Speed & Scale</h3>
+          <p>Pod‑based teams that scale with your needs without sacrificing TAT or accuracy.</p>
+        </div>
+        <div class="point">
+          <h3>Transparent Partner</h3>
+          <p>Clear SLAs, weekly reports, and continuous improvement to meet payer expectations.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Careers -->
+  <section id="careers">
+    <div class="container">
+      <div class="section-head">
+        <h2>Careers</h2>
+        <p>Grow with VIT. We welcome passionate coders and quality analysts who care about accuracy, compliance, and teamwork.</p>
+      </div>
+      <div class="career-row">
+        <div class="card">
+          <h3>Open Roles (Examples)</h3>
+          <ul>
+            <li>HCC Medical Coders (ICD‑10‑CM)</li>
+            <li>Quality Analysts / Auditors</li>
+            <li>OP Coders (from Feb 2025)</li>
+          </ul>
+          <p class="muted">Submit your resume and role preference. We evaluate profiles on skill, curiosity, and commitment to compliance.</p>
+        </div>
+        <div class="card">
+          <h3>Apply Now</h3>
+          <form onsubmit="event.preventDefault(); alert('Thanks! Your application has been received.'); this.reset();">
+            <label>Full Name<input required type="text" name="fullname" placeholder="Your name" /></label>
+            <label>Email<input required type="email" name="email" placeholder="you@example.com" /></label>
+            <label>Role<select required name="role">
+              <option value="">Select role…</option>
+              <option>HCC Coder</option>
+              <option>Quality Analyst</option>
+              <option>OP Coder (Feb 2025)</option>
+            </select></label>
+            <label>Message<textarea name="msg" placeholder="Brief note (optional)"></textarea></label>
+            <button class="btn primary" type="submit">Submit Application</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="container">
+      <div class="section-head">
         <h2>Contact Us</h2>
-        <form action="mailto:villageinfotechclient@gmail.com" method="post" enctype="text/plain">
-          <div><label>Name*</label><input type="text" name="name" required></div>
-          <div><label>Email*</label><input type="email" name="email" required></div>
-          <div><label>Phone</label><input type="text" name="phone"></div>
-          <div><label>Company</label><input type="text" name="company"></div>
-          <div class="textarea">
-            <label>Message</label>
-            <textarea name="message"></textarea>
-          </div>
-          <div class="btn">
-            <button type="submit">Submit</button>
-          </div>
-        </form>
+        <p>Tell us about your coding needs—HCC, Risk Adjustment, or OP. We’ll share a tailored proposal with SLAs and pricing options.</p>
       </div>
-    </section>
-  </div>
+      <div class="grid">
+        <div class="card">
+          <h3>Business Enquiries</h3>
+          <p><b>Village INFO Tech (VIT)</b><br/>805, Orathanadu, Thanjavur City,<br/>Tamil Nadu, India – 614625</p>
+          <p>📞 <a href="tel:+910000000000">+91 XXXXXXXX</a><br/>✉️ <a href="mailto:villageinfotechclient@gmail.com">villageinfotechclient@gmail.com</a></p>
+          <p class="badge">NDA/BAA Ready • HIPAA‑Aligned</p>
+        </div>
+        <div class="card">
+          <h3>Request a Proposal</h3>
+          <form onsubmit="event.preventDefault(); alert('Thanks! We will contact you shortly.'); this.reset();">
+            <label>Company / Organization<input required type="text" name="company" placeholder="Your company" /></label>
+            <label>Work Type<select required name="work">
+              <option value="">Select…</option>
+              <option>HCC / Risk Adjustment</option>
+              <option>Outpatient (OP) Coding</option>
+              <option>Quality Audit</option>
+            </select></label>
+            <label>Email<input required type="email" name="email" placeholder="you@company.com" /></label>
+            <label>Notes<textarea name="notes" placeholder="Volume, SLAs, timelines…"></textarea></label>
+            <button class="btn primary" type="submit">Send Request</button>
+          </form>
+        </div>
+        <div class="card">
+          <h3>Compliance & Security</h3>
+          <ul>
+            <li>Access control & need‑to‑know policies</li>
+            <li>PHI handling guidelines</li>
+            <li>Audit trails & monitoring</li>
+            <li>Incident response playbook</li>
+          </ul>
+          <p class="muted">Detailed HIPAA documentation, SOPs, and training records available for client review upon engagement.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <!-- FOOTER -->
-  <footer>
-    <p>&copy; 2025 Village IT Healthcare. All Rights Reserved. | <a href="#top">Back to Top</a></p>
+  <footer class="container foot">
+    <div>© <span id="y"></span> Village INFO Tech. All rights reserved.</div>
+    <div>Built with care in Tamil Nadu • India</div>
   </footer>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
