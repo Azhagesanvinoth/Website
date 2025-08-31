@@ -9,7 +9,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
  <style>
-  header {
+ /* Header */
+header {
   background: linear-gradient(90deg, #ff6b6b, #feca57, #54a0ff, #5f27cd);
   color: white;
   position: sticky;
@@ -17,44 +18,58 @@
   z-index: 50;
   border-bottom: 1px solid rgba(255,255,255,0.2);
   backdrop-filter: blur(5px);
+  padding: 8px 20px; /* Reduced padding for compactness */
+}
+
+/* Nav Container */
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo */
+.brand .logo {
+  width: 38px;  /* smaller size for web visibility */
+  height: 38px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #6ea8fe, #7cf7d4);
+  display: grid;
+  place-items: center;
+  font-weight: 800;
+  font-size: 16px;  /* smaller font */
+  color: #0b1220;
+}
+
+/* Nav Links */
+.nav-links {
+  display: flex;
+  gap: 18px;
+  align-items: center;
 }
 
 .nav a {
   color: white;
-  font-weight: bold;
+  font-weight: 600;
+  font-size: 0.95rem; /* slightly smaller for compact layout */
   transition: color 0.3s;
 }
 .nav a:hover {
   color: #ffd479;
 }
 
-.brand .logo {
-  width: 20px;
-  height: 20px;
-  border-radius: 8px;
-  background: linear-gradient(135deg, #6ea8fe, #7cf7d4);
-  display: grid;
-  place-items: center;
-  font-weight: 800;
-  color: #0b1220;
-}
-
-.nav-links {
-  display: flex;
-  gap: 22px;
-  align-items: center;
-}
-
+/* Buttons */
 .btn {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 10px 16px;
+  gap: 6px;
+  padding: 8px 14px; /* smaller padding */
   border: 1px solid rgba(255,255,255,0.3);
-  border-radius: 12px;
+  border-radius: 10px;
   background: rgba(255,255,255,0.15);
   color: white;
   font-weight: 600;
+  font-size: 0.9rem; /* smaller font */
   transition: all 0.3s;
 }
 
@@ -68,6 +83,17 @@
   transform: translateY(-2px);
   box-shadow: 0 6px 12px rgba(0,0,0,0.15);
 }
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .nav-links {
+    gap: 12px;
+  }
+  .btn, .nav a {
+    font-size: 0.85rem;
+    padding: 6px 10px;
+  }
+
 
     /* Hero */
     .hero{position:relative;overflow:hidden}
