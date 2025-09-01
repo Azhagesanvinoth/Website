@@ -40,34 +40,15 @@
         }
         
         /* Header Styles */
-         header  {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        header {
+            background: #ffffff;
+            color: #1a6fc4;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
         }
-        
-        body {
-            background-color: #f8f9fa;
-            color: #333;
-        }
-        
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-       header {
-    background: #ffffff; /* White background */
-    color:  #1a6fc4; /* Change text to black for visibility */
-    padding: 15px 0;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
-}
         
         nav {
             display: flex;
@@ -133,7 +114,7 @@
             height: 2px;
             bottom: 0;
             left: 0;
-            background-color: white;
+            background-color: var(--primary);
             transition: width 0.3s ease;
         }
         
@@ -163,7 +144,7 @@
             display: none;
             font-size: 24px;
             cursor: pointer;
-            color: white;
+            color: #000;
         }
         
         /* Video Background Header */
@@ -387,9 +368,9 @@
         }
         
         /* Footer */
-     footer {
-            background: var(--footer-bg);
-            color: var(--footer-text);
+        footer {
+            background: var(--light);
+            color: var(--dark);
             padding: 60px 0 30px;
             border-top: 1px solid #e9ecef;
         }
@@ -439,7 +420,7 @@
         }
         
         .footer-links a {
-            color: var(--footer-text);
+            color: var(--dark);
             text-decoration: none;
             transition: color 0.3s ease;
         }
@@ -533,6 +514,7 @@
                 justify-content: center;
                 gap: 40px;
                 transition: left 0.3s ease;
+                z-index: 999;
             }
             
             .nav-links.active {
@@ -630,7 +612,7 @@
 </head>
 <body>
     <!-- Header -->
-     <header>
+    <header>
         <div class="container">
             <nav>
                 <div class="logo-container">
@@ -643,16 +625,16 @@
                     </div>
                 </div>
                 
-                <ul class="nav-links">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#why">Why Choose Us</a></li>
-                    <li><a href="#careers">Careers</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                <ul class="nav-links" id="navMenu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#about">About Us</a></li>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="index.html#why">Why Choose Us</a></li>
+                    <li><a href="index.html#careers">Careers</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
                 </ul>
 
-                <div class="hamburger">
+                <div class="hamburger" id="hamburger">
                     <i class="fas fa-bars"></i>
                 </div>
             </nav>
@@ -926,15 +908,15 @@
 
     <script>
         // Mobile Navigation Toggle
-        const hamburger = document.querySelector('.hamburger');
-        const navMenu = document.querySelector('.nav-menu');
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('navMenu');
         
         hamburger.addEventListener('click', () => {
             navMenu.classList.toggle('active');
         });
         
         // Close mobile nav when clicking on a link
-        document.querySelectorAll('.nav-menu a').forEach(link => {
+        document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
                 navMenu.classList.remove('active');
             });
