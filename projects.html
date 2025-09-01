@@ -62,7 +62,8 @@
         }
         
         .logo img {
-            height: 60px;
+            height: 50px; /* Reduced logo size */
+            width: auto;
         }
         
         .logo-text {
@@ -71,16 +72,16 @@
         }
         
         .logo-main {
-            font-size: 1.8rem;
+            font-size: 1.5rem; /* Adjusted font size */
             font-weight: 800;
             color: var(--primary);
         }
         
         .logo-sub {
-            font-size: 1rem;
+            font-size: 0.9rem; /* Adjusted font size */
             color: var(--accent);
             font-weight: 600;
-            margin-top: -5px;
+            margin-top: -3px;
         }
         
         .nav-menu {
@@ -123,24 +124,95 @@
             color: var(--primary);
         }
         
-        /* Page Header */
-        .page-header {
-            padding: 100px 0 50px;
+        /* Video Background Header */
+        .video-header {
+            position: relative;
+            height: 60vh;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
             text-align: center;
-            background: linear-gradient(135deg, #e8f4ff 0%, #cce0ff 100%);
         }
         
-        .page-header h1 {
-            font-size: 2.8rem;
-            color: var(--primary);
+        .video-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+        
+        .video-background video {
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+        }
+        
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(44, 90, 160, 0.85);
+            z-index: 0;
+        }
+        
+        .video-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            padding: 0 20px;
+        }
+        
+        .video-content h1 {
+            font-size: 3rem;
             margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
         
-        .page-header p {
+        .video-content p {
             font-size: 1.2rem;
-            color: var(--gray);
-            max-width: 700px;
-            margin: 0 auto;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Video Controls */
+        .video-controls {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            z-index: 2;
+            display: flex;
+            gap: 10px;
+        }
+        
+        .video-control-btn {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s ease;
+        }
+        
+        .video-control-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
         }
         
         /* Projects Section */
@@ -273,11 +345,10 @@
         }
         
         /* Footer */
-       footer {
-            background: var(--footer-bg);
-            color: var(--footer-text);
+        footer {
+            background: #343a40;
+            color: white;
             padding: 60px 0 30px;
-            border-top: 1px solid #e9ecef;
         }
         
         .footer-content {
@@ -287,31 +358,30 @@
             margin-bottom: 40px;
         }
         
+        .footer-about {
+            text-align: center;
+        }
+        
         .footer-logo {
             margin-bottom: 20px;
-            text-align: center;
         }
         
         .footer-logo img {
-            height: 60px;
+            height: 50px; /* Reduced footer logo size */
             width: auto;
             margin-bottom: 15px;
-        }
-        
-        .footer-about {
-            text-align: center;
         }
         
         .footer-about p {
             margin-bottom: 20px;
             line-height: 1.6;
-            color: #6c757d;
+            color: #ced4da;
         }
         
         .footer-links h3, .footer-contact h3 {
             margin-bottom: 20px;
             font-size: 1.2rem;
-            color: var(--primary);
+            color: white;
             text-align: center;
         }
         
@@ -325,13 +395,13 @@
         }
         
         .footer-links a {
-            color: var(--footer-text);
+            color: #ced4da;
             text-decoration: none;
-            transition: color 0.3s ease;
+            transition: var(--transition);
         }
         
         .footer-links a:hover {
-            color: var(--primary);
+            color: var(--accent);
         }
         
         .footer-contact {
@@ -344,18 +414,9 @@
             align-items: center;
             justify-content: center;
             gap: 10px;
-            color: #6c757d;
+            color: #ced4da;
         }
         
-        .footer-bottom {
-            text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid #e9ecef;
-            color: #6c757d;
-            font-size: 0.9rem;
-        }
-        
-        /* Social Media Links */
         .social-links {
             display: flex;
             justify-content: center;
@@ -373,55 +434,49 @@
             background: var(--primary);
             color: white;
             text-decoration: none;
-            transition: all 0.3s ease;
+            transition: var(--transition);
         }
         
         .social-links a:hover {
-            background: var(--secondary);
+            background: var(--accent);
             transform: translateY(-3px);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #495057;
+            color: #6c757d;
+            font-size: 0.9rem;
         }
         
         /* Responsive Design */
         @media (max-width: 992px) {
-            .about-content {
-                flex-direction: column;
+            .video-content h1 {
+                font-size: 2.5rem;
             }
             
-            .hero-content h1 {
-                font-size: 2.8rem;
-            }
-            
-            .hero-content p {
-                font-size: 1.2rem;
-            }
-            
-            .contact-grid {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-            
-            .footer-content {
-                grid-template-columns: 1fr;
-                text-align: center;
+            .projects-grid {
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             }
         }
         
         @media (max-width: 768px) {
-            .nav-links {
+            .nav-menu {
                 position: fixed;
-                top: 80px;
+                top: 90px;
                 left: -100%;
                 width: 100%;
-                height: calc(100vh - 80px);
+                height: calc(100vh - 90px);
                 background: white;
                 flex-direction: column;
                 align-items: center;
                 justify-content: center;
                 gap: 40px;
-                transition: left 0.3s ease;
+                transition: var(--transition);
             }
             
-            .nav-links.active {
+            .nav-menu.active {
                 left: 0;
             }
             
@@ -429,90 +484,68 @@
                 display: block;
             }
             
-            .hero-buttons {
-                flex-direction: column;
-                align-items: center;
+            .video-header {
+                height: 50vh;
             }
             
-            .hero-content h1 {
-                font-size: 2.5rem;
+            .video-content h1 {
+                font-size: 2.2rem;
             }
             
-            .logo-tagline {
-                display: none;
+            .video-content p {
+                font-size: 1.1rem;
             }
             
-            .video-controls {
-                bottom: 10px;
-                right: 10px;
+            .projects-section {
+                padding: 60px 0;
             }
             
-            .logo img {
-                height: 60px;
+            .section-title h2 {
+                font-size: 2rem;
             }
             
-            .about-stats {
-                flex-direction: column;
-                gap: 15px;
-            }
-            
-            .stat-item {
-                width: 100%;
+            .projects-grid {
+                grid-template-columns: 1fr;
             }
             
             .footer-content {
                 grid-template-columns: 1fr;
             }
             
-            .footer-logo img {
-                height: 50px;
-            }
-            
-            .modal-content {
-                margin: 10% auto;
-                width: 95%;
-                padding: 20px;
-            }
-            
-            .project-details {
-                grid-template-columns: 1fr;
+            .video-controls {
+                display: none; /* Hide controls on mobile */
             }
         }
         
         @media (max-width: 576px) {
+            .video-content h1 {
+                font-size: 2rem;
+            }
+            
             .section-title h2 {
-                font-size: 2rem;
-            }
-            
-            .hero-content h1 {
-                font-size: 2rem;
-            }
-            
-            .hero-content p {
-                font-size: 1rem;
-            }
-            
-            .logo-main {
                 font-size: 1.8rem;
             }
             
-            .logo-sub {
-                font-size: 1rem;
+            .project-content {
+                padding: 20px;
             }
             
-            .video-controls {
-                display: none;
+            .project-content h3 {
+                font-size: 1.3rem;
+            }
+            
+            .logo-main {
+                font-size: 1.3rem;
+            }
+            
+            .logo-sub {
+                font-size: 0.8rem;
             }
             
             .logo img {
-                height: 50px;
-            }
-            
-            .footer-logo img {
                 height: 45px;
             }
         }
-      
     </style>
 </head>
 <body>
@@ -522,13 +555,15 @@
             <div class="logo">
                 <img src="Original Color Logo.png" alt="VIT Healthcare Logo">
                 <div class="logo-text">
+                    <div class="logo-main">VIT HEALTHCARE</div>
+                    <div class="logo-sub">Medical Coding Experts</div>
                 </div>
             </div>
             <ul class="nav-menu">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="index.html#services">Services</a></li>
                 <li><a href="index.html#about">About</a></li>
-                <li><a href="index.html#projects">Projects</a></li>
+                <li><a href="projects.html">Projects</a></li>
                 <li><a href="index.html#careers">Careers</a></li>
                 <li><a href="index.html#contact">Contact</a></li>
             </ul>
@@ -538,9 +573,26 @@
         </div>
     </header>
 
-    <!-- Page Header -->
-    <section class="page-header">
-        <div class="container">
+    <!-- Video Header -->
+    <section class="video-header">
+        <div class="video-background">
+            <video autoplay muted loop playsinline id="bgVideo" poster="https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1500&q=80">
+                <source src="Untitled design (1).mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="video-overlay"></div>
+        </div>
+        
+        <div class="video-controls">
+            <button class="video-control-btn" id="playPauseBtn">
+                <i class="fas fa-pause"></i>
+            </button>
+            <button class="video-control-btn" id="muteUnmuteBtn">
+                <i class="fas fa-volume-up"></i>
+            </button>
+        </div>
+        
+        <div class="video-content">
             <h1>Our Projects</h1>
             <p>Discover our successful collaborations with leading healthcare organizations and our achievements in medical coding</p>
         </div>
@@ -632,10 +684,11 @@
                         <a href="#" class="btn">View Details</a>
                     </div>
                 </div>
+                
                 <!-- Project 4 -->
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Centene ACA Project">
+                        <img src="https://images.unsplash.com/photo-1582058091975-7c0c0730e30a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Elevance MA Project">
                     </div>
                     <div class="project-content">
                         <h3>Elevance MA</h3>
@@ -657,10 +710,11 @@
                         <a href="#" class="btn">View Details</a>
                     </div>
                 </div>
+                
                 <!-- Project 5 -->
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Centene ACA Project">
+                        <img src="https://images.unsplash.com/photo-1589302168068-964664d93dc0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Elevance ACA Project">
                     </div>
                     <div class="project-content">
                         <h3>Elevance ACA</h3>
@@ -682,10 +736,11 @@
                         <a href="#" class="btn">View Details</a>
                     </div>
                 </div>
-                    <!-- Project 6 -->
+                
+                <!-- Project 6 -->
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Centene ACA Project">
+                        <img src="https://images.unsplash.com/photo-1590402494610-2c7a0d599afd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Centene MA Project">
                     </div>
                     <div class="project-content">
                          <h3>Centene MA</h3>
@@ -707,10 +762,11 @@
                         <a href="#" class="btn">View Details</a>
                     </div>
                 </div>
-                  <!-- Project 7 -->
+                
+                <!-- Project 7 -->
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Centene ACA Project">
+                        <img src="https://images.unsplash.com/photo-1576671414121-aa0eb64543d9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Aetna ACA Project">
                     </div>
                     <div class="project-content">
                          <h3>Aetna ACA</h3>
@@ -732,13 +788,12 @@
                         <a href="#" class="btn">View Details</a>
                     </div>
                 </div>
-                <!-- Add more project cards as needed -->
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-   <footer>
+    <footer>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-about">
@@ -759,19 +814,18 @@
                 <div class="footer-links">
                     <h3>Quick Links</h3>
                     <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#projects">Projects</a></li>
-                        <li><a href="#team">Our Team</a></li>
-                        <li><a href="#careers">Careers</a></li>
-                        <li><a href="#contact">Contact Us</a></li>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#about">About Us</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="index.html#careers">Careers</a></li>
+                        <li><a href="index.html#contact">Contact Us</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-contact">
                     <h3>Contact Info</h3>
-                    <p><i class="fas fa-map-marker-alt"></i>  Thanjavur, Tamil Nadu</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Thanjavur, Tamil Nadu</p>
                     <p><i class="fas fa-phone"></i> +91 8903108605</p>
                     <p><i class="fas fa-envelope"></i> villageinfotechclient@gmail.com</p>
                     <p><i class="fas fa-clock"></i> Mon-Sat: 9AM - 6PM</p>
@@ -798,6 +852,38 @@
             link.addEventListener('click', () => {
                 navMenu.classList.remove('active');
             });
+        });
+        
+        // Video Controls
+        const video = document.getElementById('bgVideo');
+        const playPauseBtn = document.getElementById('playPauseBtn');
+        const muteUnmuteBtn = document.getElementById('muteUnmuteBtn');
+        
+        // Play/Pause functionality
+        playPauseBtn.addEventListener('click', () => {
+            if (video.paused) {
+                video.play();
+                playPauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
+            } else {
+                video.pause();
+                playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
+            }
+        });
+        
+        // Mute/Unmute functionality
+        muteUnmuteBtn.addEventListener('click', () => {
+            if (video.muted) {
+                video.muted = false;
+                muteUnmuteBtn.innerHTML = '<i class="fas fa-volume-up"></i>';
+            } else {
+                video.muted = true;
+                muteUnmuteBtn.innerHTML = '<i class="fas fa-volume-mute"></i>';
+            }
+        });
+        
+        // Attempt to play video when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            video.play().catch(e => console.log("Video play failed:", e));
         });
     </script>
 </body>
