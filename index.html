@@ -110,34 +110,15 @@
         }
         
         /* Header & Navigation */
-        header  {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        header {
+            background: #ffffff;
+            color: #1a6fc4;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
         }
-        
-        body {
-            background-color: #f8f9fa;
-            color: #333;
-        }
-        
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-       header {
-    background: #ffffff; /* White background */
-    color:  #1a6fc4; /* Change text to black for visibility */
-    padding: 15px 0;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
-}
         
         nav {
             display: flex;
@@ -171,12 +152,14 @@
             font-size: 22px;
             font-weight: 700;
             letter-spacing: 0.5px;
+            color: #1a6fc4;
         }
         
         .logo-sub {
             font-size: 12px;
             letter-spacing: 1.2px;
             opacity: 0.9;
+            color: #1a6fc4;
         }
         
         .nav-links {
@@ -203,7 +186,7 @@
             height: 2px;
             bottom: 0;
             left: 0;
-            background-color: white;
+            background-color: #1a6fc4;
             transition: width 0.3s ease;
         }
         
@@ -233,7 +216,51 @@
             display: none;
             font-size: 24px;
             cursor: pointer;
-            color: white;
+            color: #1a6fc4;
+        }
+        
+        /* Mobile Navigation */
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 105px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 105px);
+                background: white;
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                gap: 30px;
+                transition: left 0.3s ease;
+                padding-top: 40px;
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .hamburger {
+                display: block;
+            }
+            
+            .logo img {
+                height: 60px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .logo-main {
+                font-size: 18px;
+            }
+            
+            .logo-sub {
+                font-size: 10px;
+            }
+            
+            .logo img {
+                height: 50px;
+            }
         }
         /* Hero Section with Video Background */
         .hero {
@@ -1599,74 +1626,7 @@
     
         // Previous JavaScript code remains the same
         
-        // Project data for modals
-        const projectData = {
-            "aetna-mra": {
-                title: "Aetna MRA Project",
-                client: "Aetna",
-                emr: "14,322",
-                date: "December 2023",
-                accuracy: "97.8%",
-                description: "Comprehensive risk adjustment coding for Aetna's Medicare Advantage plans. Our team delivered precise HCC coding with multi-level quality audits, resulting in improved risk scores and reduced denials. The project involved detailed analysis of patient records and coordination with Aetna's clinical teams."
-            },
-            "anthem": {
-                title: "Anthem Outpatient Coding",
-                client: "Anthem",
-                emr: "5,433",
-                date: "March 2024",
-                accuracy: "98.2%",
-                description: "Outpatient coding and audit services for Anthem across multiple specialties. Our certified coders ensured accurate CPT and ICD-10 code assignment, improving claim accuracy and reducing denials. The project included training sessions for Anthem's internal teams on coding best practices."
-            },
-            "centene-aca": {
-                title: "Centene ACA Coding",
-                client: "Centene",
-                emr: "12,922",
-                date: "August 2024",
-                accuracy: "97.5%",
-                description: "ACA chart coding project for Centene, focusing on accurate risk adjustment coding for Affordable Care Act plans. Our team processed a high volume of charts while maintaining strict HIPAA compliance and meeting tight deadlines."
-            },
-            "elevance-ma": {
-                title: "Elevance Medicare Advantage",
-                client: "Elevance Health",
-                emr: "1,433",
-                date: "January 2025",
-                accuracy: "98.5%",
-                description: "Medicare Advantage coding for Elevance Health, ensuring accurate HCC coding and documentation. Our specialized team focused on chronic condition coding and worked closely with Elevance's analytics team to optimize risk adjustment processes."
-            },
-            "anthem-priority": {
-                title: "Anthem Priority Coding",
-                client: "Anthem",
-                emr: "542",
-                date: "June 2024",
-                accuracy: "98.9%",
-                description: "Focused priority coding for high-risk Anthem patients. This project required specialized attention to complex cases with multiple chronic conditions. Our expert coders delivered exceptional accuracy rates, contributing significantly to appropriate risk adjustment."
-            },
-            "aetna-aca": {
-                title: "Aetna ACA Project",
-                client: "Aetna",
-                emr: "10,212",
-                date: "February 2024",
-                accuracy: "97.6%",
-                description: "Affordable Care Act chart coding and risk adjustment for Aetna's outpatient visits. Our team implemented customized coding protocols that improved efficiency while maintaining the highest accuracy standards required for ACA compliance."
-            },
-            "elevance-aca": {
-                title: "Elevance ACA Initiative",
-                client: "Elevance Health",
-                emr: "852",
-                date: "April 2025",
-                accuracy: "98.1%",
-                description: "ACA coding project for Elevance Health, featuring detailed HCC and ICD-10 coding for complex outpatient charts. This initiative included developing specialized coding guidelines for rare conditions and training modules for continuing education."
-            },
-            "centene-ma": {
-                title: "Centene Medicare Advantage",
-                client: "Centene",
-                emr: "9,359",
-                date: "November 2024",
-                accuracy: "97.9%",
-                description: "Medicare Advantage coding project for Centene Corporation, emphasizing accuracy and audit readiness. Our team implemented advanced quality control measures that resulted in exceptional performance during CMS audits and improved risk score accuracy."
-            }
-        };
-
+        
         // Modal functionality
         const modal = document.getElementById('projectModal');
         const modalTitle = document.getElementById('modalTitle');
@@ -1762,40 +1722,33 @@
                 }
             });
         });
-        // Mobile Navigation Toggle
-        const hamburger = document.getElementById('hamburger');
-        const mobileMenu = document.getElementById('mobileMenu');
-        const menuOverlay = document.getElementById('menuOverlay');
+       // Mobile Navigation Toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
         
-        function toggleMenu() {
-            hamburger.classList.toggle('active');
-            mobileMenu.classList.toggle('active');
-            menuOverlay.classList.toggle('active');
-            document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
-        }
-        
-        hamburger.addEventListener('click', toggleMenu);
-        menuOverlay.addEventListener('click', toggleMenu);
-        
-        // Close mobile nav when clicking on a link
-        document.querySelectorAll('.mobile-nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                toggleMenu();
-            });
-        });
-        
-        // Header scroll effect
-        const header = document.querySelector('header');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                header.style.padding = '10px 0';
-                header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            
+            // Change icon based on menu state
+            const icon = hamburger.querySelector('i');
+            if (navLinks.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
             } else {
-                header.style.padding = '15px 0';
-                header.style.boxShadow = '0 2px 15px rgba(0, 0, 0, 0.1)';
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
             }
         });
-
+        
+        // Close mobile nav when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                const icon = hamburger.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            });
+        });
     </script>
 </body>
 </html>
