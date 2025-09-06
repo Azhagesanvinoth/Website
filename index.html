@@ -1487,60 +1487,67 @@
     </footer>
 
     <script>
-        // Mobile Navigation Toggle
-        const hamburger = document.querySelector('.hamburger');
-        const navLinks = document.querySelector('.nav-links');
-        const header = document.querySelector('header');
+    // Mobile Navigation Toggle
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+    const header = document.querySelector('header');
+    
+    hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
         
-        hamburger.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
+        // Change icon based on menu state
+        const icon = hamburger.querySelector('i');
+        if (navLinks.classList.contains('active')) {
+            icon.classList.remove('fa-bars');
+            icon.classList.add('fa-times');
+        } else {
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
+        }
+    });
+    
+    // Close mobile nav when clicking on a link
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+            const icon = hamburger.querySelector('i');
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
         });
-        
-        // Close mobile nav when clicking on a link
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-            });
-        });
-        
-        // Header scroll effect
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                header.style.padding = '5px 0';
-                header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
-            } else {
-                header.style.padding = '0';
-                header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
-            }
-        });
-        
-        // Form submission
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you for your message! We will get back to you soon.');
-            this.reset();
-        });
-        
-        // Video Controls with improved reliability
-        const video = document.getElementById('bgVideo');
-        const playPauseBtn = document.getElementById('playPauseBtn');
-        const muteUnmuteBtn = document.getElementById('muteUnmuteBtn');
-        
-        // Function to ensure video plays
-        function ensureVideoPlays() {
-            if (video.paused) {
-                const playPromise = video.play();
-                
-                if (playPromise !== undefined) {
-                    playPromise.catch(error => {
-                        console.log("Auto-play prevented:", error);
-                        document.querySelector('.video-controls').style.display = 'flex';
-                    });
-                }
+    });
+    
+    // Header scroll effect
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            header.style.padding = '5px 0';
+            header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+        } else {
+            header.style.padding = '0';
+            header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+        }
+    });
+    
+    // Video Controls with improved reliability
+    const video = document.getElementById('bgVideo');
+    const playPauseBtn = document.getElementById('playPauseBtn');
+    const muteUnmuteBtn = document.getElementById('muteUnmuteBtn');
+    
+    // Function to ensure video plays
+    function ensureVideoPlays() {
+        if (video.paused) {
+            const playPromise = video.play();
+            
+            if (playPromise !== undefined) {
+                playPromise.catch(error => {
+                    console.log("Auto-play prevented:", error);
+                    document.querySelector('.video-controls').style.display = 'flex';
+                });
             }
         }
-        
-        // Play/Pause functionality
+    }
+    
+    // Play/Pause functionality
+    if (playPauseBtn) {
         playPauseBtn.addEventListener('click', () => {
             if (video.paused) {
                 video.play();
@@ -1550,8 +1557,10 @@
                 playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
             }
         });
-        
-        // Mute/Unmute functionality
+    }
+    
+    // Mute/Unmute functionality
+    if (muteUnmuteBtn) {
         muteUnmuteBtn.addEventListener('click', () => {
             if (video.muted) {
                 video.muted = false;
@@ -1561,8 +1570,10 @@
                 muteUnmuteBtn.innerHTML = '<i class="fas fa-volume-mute"></i>';
             }
         });
-        
-        // Monitor video for errors and attempt to restart if it stops
+    }
+    
+    // Monitor video for errors and attempt to restart if it stops
+    if (video) {
         video.addEventListener('pause', function() {
             if (!video.ended && !video.seeking) {
                 setTimeout(() => {
@@ -1591,88 +1602,30 @@
                 video.play().catch(e => console.log("Background video check failed:", e));
             }
         }, 5000);
-        
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
+    }
     
-        // Previous JavaScript code remains the same
-        
-        
-        // Modal functionality
-        const modal = document.getElementById('projectModal');
-        const modalTitle = document.getElementById('modalTitle');
-        const modalClient = document.getElementById('modalClient');
-        const modalEmr = document.getElementById('modalEmr');
-        const modalDate = document.getElementById('modalDate');
-        const modalAccuracy = document.getElementById('modalAccuracy');
-        const modalDescription = document.getElementById('modalDescription');
-        
-        // Add click event to all project cards
-        document.querySelectorAll('.project-card').forEach(card => {
-            card.addEventListener('click', () => {
-                const projectId = card.getAttribute('data-project');
-                openModal(projectId);
-            });
-        });
-        
-        // Open modal with project data
-        function openModal(projectId) {
-            const project = projectData[projectId];
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
             
-            if (project) {
-                modalTitle.textContent = project.title;
-                modalClient.textContent = project.client;
-                modalEmr.textContent = project.emr;
-                modalDate.textContent = project.date;
-                modalAccuracy.textContent = project.accuracy;
-                modalDescription.textContent = project.description;
-                
-                modal.classList.add('active');
-                document.body.style.overflow = 'hidden'; // Prevent scrolling
-            }
-        }
-        
-        // Close modal
-        document.querySelectorAll('.close-modal').forEach(button => {
-            button.addEventListener('click', () => {
-                modal.classList.remove('active');
-                document.body.style.overflow = ''; // Re-enable scrolling
-            });
-        });
-        
-        // Close modal when clicking outside content
-        modal.addEventListener('click', (e) => {
-            if (e.target === modal) {
-                modal.classList.remove('active');
-                document.body.style.overflow = '';
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80,
+                    behavior: 'smooth'
+                });
             }
         });
-        
-        // Close modal with Escape key
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && modal.classList.contains('active')) {
-                modal.classList.remove('active');
-                document.body.style.overflow = '';
-            }
-        });
-          <script>
-        // Simple form validation
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
+    });
+
+    // Simple form validation
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
             
             // Get form values
@@ -1690,51 +1643,7 @@
                 alert('Please fill in all fields.');
             }
         });
-        
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-       // Mobile Navigation Toggle
-        const hamburger = document.querySelector('.hamburger');
-        const navLinks = document.querySelector('.nav-links');
-        
-        hamburger.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            
-            // Change icon based on menu state
-            const icon = hamburger.querySelector('i');
-            if (navLinks.classList.contains('active')) {
-                icon.classList.remove('fa-bars');
-                icon.classList.add('fa-times');
-            } else {
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
-            }
-        });
-        
-        // Close mobile nav when clicking on a link
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-                const icon = hamburger.querySelector('i');
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
-            });
-        });
-    </script>
+    }
+</script>
 </body>
 </html>
